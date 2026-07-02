@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cricut — Jucelyn 智鈴</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#161210; --fg:#F5EEDE; --violet:#8050B0; --violet-lt:#B692E0;
+    --muted:#8a8079; --line:rgba(245,238,222,.16);
+    --d:"Archivo","Noto Sans TC",system-ui,sans-serif;
+    --b:"Hanken Grotesk","Noto Sans TC",system-ui,sans-serif;
+    --sans-tc:"Noto Sans TC",sans-serif;
+    --m:"Space Mono",ui-monospace,monospace;
+    --wide:1080px;
+    --accent:#1EB487; --reveal-distance:30px; --reveal-duration:.7s; --reveal-easing:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:var(--b);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wide{max-width:var(--wide);margin:0 auto;padding:0 44px}
+  a{color:inherit;text-decoration:none}
+
+  .cursor-dot,.cursor-ring{display:none}
+  @media(pointer:fine){
+    body{cursor:none} a,button{cursor:none}
+    .cursor-dot,.cursor-ring{display:block;position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+    .cursor-dot{width:7px;height:7px;background:var(--violet-lt)}
+    .cursor-ring{width:38px;height:38px;border:1.5px solid var(--violet-lt);transition:width .22s,height .22s,background .22s}
+    .cursor-ring.hov{width:66px;height:66px;background:rgba(182,146,224,.14)}
+  }
+
+  header{border-top:3px solid var(--accent);position:sticky;top:0;z-index:50;background:rgba(22,18,16,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .crumb{font-family:var(--m);font-size:13px;color:var(--muted)}
+  .crumb b{color:var(--fg);font-weight:400}
+  .toggle{display:inline-flex;border:1px solid var(--line);border-radius:100px;overflow:hidden;font-family:var(--m);font-size:13px}
+  .toggle button{background:transparent;color:var(--muted);border:0;padding:6px 13px;font-family:var(--m)}
+  .toggle button.on{background:var(--fg);color:var(--bg);font-weight:700}
+
+  /* HEADER: title + date/category */
+  .top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;padding:76px 0 30px;border-bottom:1px solid var(--line)}
+  .top h1{font-family:var(--d);font-weight:900;font-size:clamp(48px,8.5vw,118px);line-height:.9;letter-spacing:-.03em;text-transform:uppercase}
+  .top h1.l-zh{font-family:var(--sans-tc);text-transform:none;letter-spacing:0}
+  .top .rt{text-align:right;font-family:var(--m);font-size:12.5px;letter-spacing:.06em;line-height:1.8}
+  .top .rt .cat{color:var(--fg);text-transform:uppercase}
+  .top .rt .yr{color:var(--accent)}
+
+  /* INTRO: large readable paragraph */
+  .intro{font-size:clamp(22px,3vw,34px);line-height:1.5;font-weight:500;color:var(--fg);padding:46px 0 6px;max-width:30ch}
+  .intro.l-zh{font-family:var(--sans-tc);line-height:1.65}
+
+  /* METADATA GRID: services / challenge / role */
+  .meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:44px;border-top:1px solid var(--line);margin-top:48px;padding-top:46px}
+  .m-label{font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--violet-lt);margin-bottom:18px}
+  .m-cell p{font-size:15.5px;line-height:1.75;color:rgba(245,238,222,.74)}
+  .m-cell.l-zh p,.m-cell p.l-zh{font-family:var(--sans-tc)}
+  .pills{display:flex;flex-wrap:wrap;gap:9px}
+  .pills span{border:1px solid var(--line);border-radius:100px;padding:8px 15px;font-size:13.5px;color:rgba(245,238,222,.9)}
+
+  /* IMAGE GALLERY: full + half, rounded */
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:74px}
+  .ph{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    background:linear-gradient(160deg,#241c19,#171210);display:flex;align-items:center;justify-content:center}
+  .ph::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 14px,rgba(182,146,224,.05) 14px,rgba(182,146,224,.05) 28px)}
+  .ph .hint{position:relative;z-index:1;font-family:var(--m);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .g-full{grid-column:1 / -1;aspect-ratio:16/9}
+  .g-half{aspect-ratio:4/3}
+
+  /* NAVIGATION */
+  .pagenav{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:80px;padding:30px 0 90px}
+  .navbtn{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:100px;padding:13px 24px;font-family:var(--m);font-size:13px;letter-spacing:.04em;color:var(--fg);transition:background .25s,color .25s,border-color .25s}
+  .navbtn:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+  .l-zh{display:none}
+  body.zh .l-en{display:none}
+  body.zh .l-zh{display:block}
+
+  /* ===== GLOBAL SCROLL-REVEAL SYSTEM ===== */
+  .reveal-on-scroll{opacity:0;transform:translateY(var(--reveal-distance));
+    transition:opacity var(--reveal-duration) var(--reveal-easing),transform var(--reveal-duration) var(--reveal-easing);
+    transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
+  .reveal-on-scroll.is-visible{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal-on-scroll{opacity:1!important;transform:none!important;transition:none!important}}
+
+  @media(max-width:820px){
+    .wide{padding:0 22px}
+    .top{padding:50px 0 24px}.top .rt{text-align:left}
+    .meta{grid-template-columns:1fr;gap:34px}
+    .gallery{grid-template-columns:1fr}.g-full,.g-half{aspect-ratio:4/3}
+  }
+</style>
+</head>
+<body>
+<div class="cursor-ring" id="ring"></div>
+<div class="cursor-dot" id="dot"></div>
+
+<header>
+  <div class="wide bar">
+    <a class="crumb" href="../index.html#work">‹ <span class="t" data-en="Projects" data-zh="作品">Projects</span> / <b>Cricut</b></a>
+    <div class="toggle"><button id="b-en" class="on" onclick="setLang('en')">EN</button><button id="b-zh" onclick="setLang('zh')">中</button></div>
+  </div>
+</header>
+
+<div class="wide">
+  <div class="top">
+    <h1 class="reveal-on-scroll">Cricut</h1>
+    <div class="rt reveal-on-scroll" data-reveal-delay="80ms">
+      <div class="cat"><span class="t" data-en="Social · E-commerce · Campaign" data-zh="社群 · 電商 · 活動">Social · E-commerce · Campaign</span></div>
+      <div class="yr">2024</div>
+    </div>
+  </div>
+
+  <p class="intro l-en reveal-on-scroll">Localizing a global maker brand for Taiwan — turning crafting inspiration into campaigns and storefronts that convert.</p>
+  <p class="intro l-zh reveal-on-scroll">為台灣在地化國際手作品牌——把手作靈感，轉化為能帶動轉換的活動與電商素材。</p>
+
+  <div class="meta">
+    <div class="m-cell reveal-on-scroll">
+      <div class="m-label"><span class="t" data-en="Services" data-zh="服務項目">Services</span></div>
+      <div class="pills">
+        <span class="t" data-en="Social Design" data-zh="社群設計">Social Design</span>
+        <span class="t" data-en="E-commerce" data-zh="電商">E-commerce</span>
+        <span class="t" data-en="Campaign" data-zh="活動企劃">Campaign</span>
+      </div>
+    </div>
+    <div class="m-cell reveal-on-scroll" data-reveal-delay="90ms">
+      <div class="m-label"><span class="t" data-en="Challenge" data-zh="挑戰">Challenge</span></div>
+      <p class="l-en">Adapt a US maker brand’s playful identity for Taiwanese platforms and shopping habits without losing its voice.</p>
+      <p class="l-zh">在不失品牌調性的前提下，將美國手作品牌活潑的識別，轉化為適合台灣平台與購物習慣的視覺。</p>
+    </div>
+    <div class="m-cell reveal-on-scroll" data-reveal-delay="180ms">
+      <div class="m-label"><span class="t" data-en="Role" data-zh="角色">Role</span></div>
+      <p class="l-en">Commercial designer for localized social, campaign, and e-commerce assets.</p>
+      <p class="l-zh">負責在地化社群、活動與電商視覺的商業設計師。</p>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <div class="ph g-full reveal-on-scroll"><img src="../images/cricut-1.jpg" alt="Cricut" loading="lazy" onerror="this.remove()"><span class="hint">../images/cricut-1.jpg  ←  Cricut / BN / 0301.jpg</span></div>
+    <div class="ph g-half reveal-on-scroll" data-reveal-delay="90ms"><img src="../images/cricut-2.jpg" alt="Cricut" loading="lazy" onerror="this.remove()"><span class="hint">../images/cricut-2.jpg  ←  Cricut / BN / 0203.jpg</span></div>
+    <div class="ph g-half reveal-on-scroll"><img src="../images/cricut-3.jpg" alt="Cricut" loading="lazy" onerror="this.remove()"><span class="hint">../images/cricut-3.jpg  ←  add more</span></div>
+    <div class="ph g-full reveal-on-scroll" data-reveal-delay="90ms"><img src="../images/cricut-4.jpg" alt="Cricut" loading="lazy" onerror="this.remove()"><span class="hint">../images/cricut-4.jpg  ←  add more</span></div>
+  </div>
+
+  <div class="pagenav">
+    <a class="navbtn" href="../index.html#work">‹ <span class="t" data-en="Go back to projects" data-zh="回到所有作品">Go back to projects</span></a>
+    <a class="navbtn" href="#top" onclick="scrollTo({top:0,behavior:'smooth'})"><span class="t" data-en="Scroll to top" data-zh="回到頂部">Scroll to top</span> ↑</a>
+  </div>
+</div>
+
+<script>
+  function setLang(l){
+    document.body.classList.toggle('zh', l==='zh');
+    document.documentElement.lang=l==='zh'?'zh-Hant':'en';
+    document.getElementById('b-en').classList.toggle('on',l==='en');
+    document.getElementById('b-zh').classList.toggle('on',l==='zh');
+    document.querySelectorAll('.t').forEach(t=>{if(t.dataset[l]!==undefined)t.textContent=t.dataset[l];});
+  }
+  const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  (function(){
+    var SEL='.reveal-on-scroll';
+    document.querySelectorAll('[data-reveal-group]').forEach(function(g){
+      var step=parseInt(g.getAttribute('data-reveal-group'),10)||90;
+      g.querySelectorAll(SEL).forEach(function(el,i){ if(!el.hasAttribute('data-reveal-delay')) el.setAttribute('data-reveal-delay',(i*step)+'ms'); });
+    });
+    var items=document.querySelectorAll(SEL);
+    if(reduce||!('IntersectionObserver' in window)){ items.forEach(function(el){el.classList.add('is-visible');}); return; }
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(!e.isIntersecting)return; var el=e.target,d=el.getAttribute('data-reveal-delay'); if(d)el.style.setProperty('--reveal-delay',d); el.classList.add('is-visible'); io.unobserve(el); });},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){io.observe(el);});
+  })();
+  if(matchMedia('(pointer:fine)').matches && !reduce){
+    const dot=document.getElementById('dot'),ring=document.getElementById('ring');let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+    addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+    document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>ring.classList.add('hov'));el.addEventListener('mouseleave',()=>ring.classList.remove('hov'));});
+    (function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+  }
+</script>
+</body>
+</html>

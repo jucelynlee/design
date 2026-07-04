@@ -116,16 +116,16 @@
 #work .mast h2{font-family:var(--d);font-weight:900;font-size:clamp(60px,13vw,200px);line-height:.86;letter-spacing:-.03em;text-transform:uppercase}
 #work .mast .blurb{font-size:16px;line-height:1.75;color:rgba(245,238,222,.72);max-width:38ch;padding-top:14px}
 #work .mast .blurb.l-zh{font-family:var(--sans-tc)}
-#work .spread{position:relative;padding:clamp(80px,13vh,160px) 0;color:var(--brand-fg);
+#work .spread{border-top:1px solid var(--line);position:relative;padding:clamp(80px,13vh,160px) 0;color:var(--brand-fg);
     --brand-fg:#F5EEDE;--brand-soft:rgba(245,238,222,.82);--brand-line:rgba(245,238,222,.3)}
 #work .spread::before{content:"";position:absolute;top:0;bottom:0;left:50%;margin-left:-50vw;width:100vw;background:var(--brand-bg,#161210);z-index:0}
 #work .spread>*{position:relative;z-index:1}
-#work .band-cricut{--brand-bg:#1EB487;--brand-fg:#161210;--brand-soft:rgba(22,18,16,.8);--brand-line:rgba(22,18,16,.32)}
-#work .band-vephos{--brand-bg:#002748}
-#work .band-usexpo{--brand-bg:#F5EEDE;--brand-fg:#1A1413;--brand-soft:rgba(26,20,19,.72);--brand-line:rgba(26,20,19,.18)}
-#work .band-tech21{--brand-bg:#fa2634}
-#work .band-decoded{--brand-bg:#5E4632}
-#work .band-hongyu{--brand-bg:#4c76b6}
+#work .band-cricut{--brand-bg:#161210}
+#work .band-vephos{--brand-bg:#161210}
+#work .band-usexpo{--brand-bg:#161210}
+#work .band-tech21{--brand-bg:#161210}
+#work .band-decoded{--brand-bg:#161210}
+#work .band-hongyu{--brand-bg:#161210}
 #work .spread .ptitle{color:var(--brand-fg)}
 #work .spread .pdesc{color:var(--brand-soft)}
 #work .spread .pills span{background:var(--brand-fg);color:var(--brand-bg)}
@@ -301,6 +301,52 @@
 #contact .footer a{color:var(--muted);transition:color .2s}
 #contact .footer a:hover{color:var(--fg)}
 @media(max-width:820px){#contact .wide{padding:0 22px}}
+
+  /* nav: no underline, purple brand */
+  .bar a{text-decoration:none;color:inherit}
+  .brand{color:var(--violet-lt)}
+
+  /* hero: Kaisei-style small bracket label + giant headline */
+  #home .greet{font-family:var(--m);font-weight:400;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--violet-lt);margin:0 0 28px}
+  #home .greet::before{content:"[ "}
+  #home .greet::after{content:" ]"}
+  #home h1{font-size:clamp(52px,9.5vw,150px);line-height:1.04}
+  #home h1.l-zh{line-height:1.2}
+
+  /* about: info-sheet rows */
+  #about .grid{align-items:center}
+  #about .info-rows{margin-top:56px}
+  #about .irow{display:grid;grid-template-columns:220px 1fr;gap:30px;padding:26px 0;border-top:1px solid var(--line)}
+  #about .ik{font-family:var(--m);font-size:13px;letter-spacing:.08em;color:var(--violet-lt)}
+  #about .iv{font-size:16px;line-height:1.8;color:rgba(245,238,222,.85)}
+  #about .iv p{max-width:70ch}
+  #about .iv .l-zh{font-family:var(--sans-tc)}
+  #about .iv b{color:var(--fg)}
+
+  /* phone RWD */
+  @media(max-width:760px){
+    .wide{padding:0 20px}
+    .bar{padding:14px 20px}
+    #home .greet{font-size:12px;margin-bottom:20px}
+    #home h1{font-size:clamp(40px,11.5vw,64px)}
+    #about .grid{grid-template-columns:1fr;gap:26px}
+    #about .portrait{max-width:340px}
+    #about .irow{grid-template-columns:1fr;gap:8px;padding:20px 0}
+    #work .head{flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:30px}
+    #work .pills{padding-top:0}
+    #work .body{grid-template-columns:1fr;gap:24px}
+    #work .gallery{grid-template-columns:1fr;gap:14px}
+    #work .ph{height:auto;aspect-ratio:4/3}
+    #work .ptitle{font-size:clamp(38px,11vw,56px)}
+    #work .viewbtn{font-size:20px}
+    #capabilities .cap-row{display:block;padding:22px 0}
+    #capabilities .cap-desc{margin-top:8px}
+    #stats .stats{grid-template-columns:1fr 1fr;gap:30px 18px}
+    #stats .stat-num{font-size:clamp(40px,13vw,64px)}
+    #contact h2{font-size:clamp(32px,9.5vw,50px)}
+    #contact .email{font-size:clamp(17px,5.5vw,26px);word-break:break-all}
+  }
+
 </style>
 </head>
 <body>
@@ -321,14 +367,14 @@
   
 
   <div class="hero-main">
-    <p class="greet l-en swap">HI, I am Jucelyn!</p>
+    <p class="greet l-en swap">Hello, I am Jucelyn!</p>
     <p class="greet l-zh swap">你好！我是 Jucelyn！</p>
     <h1 class="l-en" id="headline-en"></h1>
     <h1 class="l-zh" id="headline-zh"></h1>
   </div>
 
   <div class="herofoot">
-    <span class="t" data-en="Branding · Social · Packaging" data-zh="品牌 · 社群 · 包裝">Branding · Social · Packaging</span>
+    <span class="t" data-en="Branding · Social · Packaging" data-zh="品牌識別 · 社群視覺 · 包裝設計">Branding · Social · Packaging</span>
     <span class="scroll"><span class="t" data-en="Scroll" data-zh="向下捲動">Scroll</span> <span class="arrow">↓</span></span>
   </div>
 </div>
@@ -337,38 +383,50 @@
 <section id="about">
 <div class="wide">
   <div class="folio reveal">
-    <span class="t" data-en="02 / About" data-zh="02 / 關於">02 / About</span>
-    <span class="t" data-en="Designer" data-zh="設計師">Designer</span>
+    <span class="t" data-en="[ About me ]" data-zh="[ 關於我 ]">[ About me ]</span>
+    <span class="t" data-en="[ Designer ]" data-zh="[ 設計師 ]">[ Designer ]</span>
   </div>
   <h2 class="bighead reveal"><span class="t" data-en="About" data-zh="關於">About</span></h2>
 
   <div class="grid">
     <div class="portrait reveal">
-      <span class="hint">Add your photo</span>
-      <span class="hint" style="opacity:.6">images/jucelyn.jpg</span>
+      <img src="images/jucelyn.jpg" alt="Jucelyn Lee — Commercial Designer" loading="lazy" onerror="this.style.display='none'">
+      <span class="hint" style="opacity:.5">images/jucelyn.jpg</span>
     </div>
-
     <div class="reveal">
-      <p class="lead l-en">I'm a <span class="vio">Commercial Designer</span> blending strategy with visual emotion.</p>
-      <p class="lead l-zh">我是一位擅長用視覺解決商業問題的<span class="vio">平面設計師</span>。</p>
-
-      <p class="para l-en">I craft high-conversion digital assets for global tech brands like JLab, EarFun, myFirst, and Cricut. By seamlessly integrating AI workflows (GPT &amp; Gemini), I transform complex requests into scalable, data-driven visual systems. I don’t just design—I build <b>memorable identities that drive real commercial growth.</b></p>
-      <p class="para l-zh">在思博特期間，我負責為各大電商平台與 JLab、EarFun、myFirst、Cricut 等國際 3C 品牌，打造具備高轉化率的產品落地頁與社群素材。面對 AI 設計趨勢，我已將 GPT 與 Gemini 深度導入工作流，將繁雜的設計需求，系統化地轉化為帶有商業價值的視覺資產，<b>帶動實質的商業成長。</b></p>
-
-      <div class="blocklabel"><span class="t" data-en="Toolkit" data-zh="工具">Toolkit</span></div>
-      <div class="chips">
-        <span>Photoshop</span><span>Illustrator</span><span>Figma</span><span>After Effects</span><span>Premiere Pro</span><span>CapCut</span><span>MidJourney</span><span>Leonardo AI</span><span>WordPress</span>
-      </div>
-
-      <div class="blocklabel"><span class="t" data-en="Selected clients" data-zh="合作品牌">Selected clients</span></div>
-      <div class="clients">JLab · EarFun · Cleer · Cricut · Audio Pro · Vephos</div>
+      <p class="lead l-en">I'm a <span class="vio">Commercial Designer</span> who solves business challenges through compelling visual storytelling.</p>
+      <p class="lead l-zh">我是一名專注於以視覺解決商業挑戰的<span class="vio">平面設計師</span>。</p>
     </div>
   </div>
 
-  <div class="facts reveal">
-    <div><div class="k"><span class="t" data-en="Experience" data-zh="資歷">Experience</span></div><div class="v"><span class="t" data-en="2+ years, commercial design" data-zh="2 年以上，商業設計">2+ years, commercial design</span></div></div>
-    <div><div class="k"><span class="t" data-en="Languages" data-zh="語言">Languages</span></div><div class="v"><span class="t" data-en="Chinese · English · Malay" data-zh="中文 · 英文 · 馬來文">Chinese · English · Malay</span></div></div>
-    <div><div class="k"><span class="t" data-en="Focus" data-zh="專注領域">Focus</span></div><div class="v"><span class="t" data-en="Branding · Social · Packaging" data-zh="品牌 · 社群 · 包裝">Branding · Social · Packaging</span></div></div>
+  <div class="info-rows reveal">
+    <div class="irow">
+      <div class="ik"><span class="t" data-en="[ Profile ]" data-zh="[ 簡介 ]">[ Profile ]</span></div>
+      <div class="iv">
+        <p class="l-en">With over two years of commercial experience, I specialize in crafting high-conversion digital assets for global tech and consumer brands, including JLab, EarFun, myFirst, and Cricut. By embracing modern AI workflows—seamlessly integrating tools like GPT and Gemini—I translate complex requirements into scalable, data-driven design systems. I don't just make things look good; I build <b>memorable brand identities that drive tangible commercial growth.</b></p>
+        <p class="l-zh">在思博特任職期間，我負責為 JLab、EarFun、myFirst 與 Cricut 等國際知名 3C 品牌，打造具備高轉換率的產品落地頁與社群素材。面對不斷演進的 AI 趨勢，我已將 GPT 與 Gemini 深度整合至設計工作流中，將繁雜的設計需求，系統化地轉變為高擴展性的視覺資產。我不僅僅是做設計，更致力於塑造令人難忘的品牌識別，<b>進而帶動實質的商業成長。</b></p>
+      </div>
+    </div>
+    <div class="irow">
+      <div class="ik"><span class="t" data-en="[ Experience ]" data-zh="[ 經歷 ]">[ Experience ]</span></div>
+      <div class="iv"><span class="t" data-en="2+ years in commercial design" data-zh="兩年以上商業設計經驗">2+ years in commercial design</span></div>
+    </div>
+    <div class="irow">
+      <div class="ik"><span class="t" data-en="[ Languages ]" data-zh="[ 語言 ]">[ Languages ]</span></div>
+      <div class="iv"><span class="t" data-en="Chinese, English, Malay" data-zh="中文、英文、馬來文">Chinese, English, Malay</span></div>
+    </div>
+    <div class="irow">
+      <div class="ik"><span class="t" data-en="[ Focus ]" data-zh="[ 領域 ]">[ Focus ]</span></div>
+      <div class="iv"><span class="t" data-en="Branding, Social Media, Packaging" data-zh="品牌識別、社群視覺、包裝設計">Branding, Social Media, Packaging</span></div>
+    </div>
+    <div class="irow">
+      <div class="ik"><span class="t" data-en="[ Toolkit ]" data-zh="[ 軟體技能 ]">[ Toolkit ]</span></div>
+      <div class="iv"><div class="chips"><span>Photoshop</span><span>Illustrator</span><span>Figma</span><span>After Effects</span><span>Premiere Pro</span><span>CapCut</span><span>MidJourney</span><span>Leonardo AI</span><span>WordPress</span></div></div>
+    </div>
+    <div class="irow">
+      <div class="ik"><span class="t" data-en="[ Clients ]" data-zh="[ 合作客戶 ]">[ Clients ]</span></div>
+      <div class="iv clients">JLab · EarFun · Cleer · Cricut · Audio Pro · Vephos</div>
+    </div>
   </div>
 </div>
 </section>
@@ -392,8 +450,8 @@
     </div>
     <div class="body">
       <div class="left reveal-on-scroll">
-        <p class="pdesc l-en">Localizing a global maker brand for Taiwan — campaigns and e-commerce that turn crafting inspiration into clicks.</p>
-        <p class="pdesc l-zh">為台灣在地化國際手作品牌——把手作靈感，轉化為點擊與購買的活動與電商素材。</p>
+        <p class="pdesc l-en">Localizing a global crafting brand for the Taiwanese market. I developed targeted campaigns and e-commerce visuals that turn creative inspiration into measurable clicks and sales.</p>
+        <p class="pdesc l-zh">國際手作指標品牌的在地化推廣——精心策劃活動與電商視覺，成功將手作靈感轉化為實際的點擊與購買轉換。</p>
         <a class="viewbtn" href="projects/cricut.html"><span class="arw">→</span> <span class="t" data-en="View Project" data-zh="查看專案">View Project</span></a>
       </div>
       <div class="gallery">
@@ -414,8 +472,8 @@
     </div>
     <div class="body">
       <div class="left reveal-on-scroll">
-        <p class="pdesc l-en">A premium home-appliance brand — packaging, key visuals, and a website built around a calm, design-led identity.</p>
-        <p class="pdesc l-zh">高端家電品牌——以沉穩、設計導向的識別，打造包裝、主視覺與網頁。</p>
+        <p class="pdesc l-en">Establishing a calm, design-led identity for a premium home appliance brand. Delivered comprehensive packaging, engaging key visuals, and an intuitive website interface.</p>
+        <p class="pdesc l-zh">高階家電品牌的視覺形塑——以沉穩、設計導向的識別核心，打造全方位的包裝、主視覺與品牌網頁。</p>
         <a class="viewbtn" href="projects/vephos.html"><span class="arw">→</span> <span class="t" data-en="View Project" data-zh="查看專案">View Project</span></a>
       </div>
       <div class="gallery">
@@ -436,8 +494,8 @@
     </div>
     <div class="body">
       <div class="left reveal-on-scroll">
-        <p class="pdesc l-en">Bilingual packaging and exhibition graphics for a heritage Taiwanese food brand entering the US market.</p>
-        <p class="pdesc l-zh">為進軍美國市場的台灣傳統食品品牌，打造雙語包裝與展會視覺。</p>
+        <p class="pdesc l-en">Bridging cultures for a heritage Taiwanese food brand entering the US market. Designed impactful bilingual packaging and immersive exhibition booth graphics.</p>
+        <p class="pdesc l-zh">協助台灣傳統食品品牌進軍美國市場——量身打造具備文化橋樑作用的雙語包裝與展會空間視覺。</p>
         <a class="viewbtn" href="projects/usexpo.html"><span class="arw">→</span> <span class="t" data-en="View Project" data-zh="查看專案">View Project</span></a>
       </div>
       <div class="gallery">
@@ -460,8 +518,8 @@
     </div>
     <div class="body">
       <div class="left reveal-on-scroll">
-        <p class="pdesc l-en">Product and campaign visuals for a premium device-protection accessory brand, built for a design-led audience.</p>
-        <p class="pdesc l-zh">為高端裝置防護配件品牌打造的產品與活動視覺，面向重視設計的受眾。</p>
+        <p class="pdesc l-en">Crafted sleek product and campaign visuals for a premium device-protection brand, tailored specifically to captivate a design-conscious audience.</p>
+        <p class="pdesc l-zh">為頂級裝置防護配件品牌設計產品與活動視覺，精準鎖定並吸引重視設計質感的目標客群。</p>
         <a class="viewbtn" href="projects/decoded.html"><span class="arw">→</span> <span class="t" data-en="View Project" data-zh="查看專案">View Project</span></a>
       </div>
       <div class="gallery">
@@ -482,8 +540,8 @@
     </div>
     <div class="body">
       <div class="left reveal-on-scroll">
-        <p class="pdesc l-en">Brand identity and bilingual export packaging for Hong Yu Food, a heritage Taiwanese food house — logo, gift sets, and retail packs.</p>
-        <p class="pdesc l-zh">為台灣老字號食品品牌宏裕行打造的品牌識別與外銷雙語包裝——標誌、禮盒與零售包裝。</p>
+        <p class="pdesc l-en">Revitalized the brand identity for a historic Taiwanese food house. Delivered a modernized logo, bilingual export packaging, retail packs, and premium gift sets.</p>
+        <p class="pdesc l-zh">台灣老字號品牌「宏裕行」的識別重塑——包含品牌標誌現代化、雙語外銷包裝、零售包裝以及精美禮盒設計。</p>
         <a class="viewbtn" href="projects/hongyu.html"><span class="arw">→</span> <span class="t" data-en="View Project" data-zh="查看專案">View Project</span></a>
       </div>
       <div class="gallery">
@@ -508,37 +566,37 @@
 
   <div class="cap-row reveal">
     <div class="cap-no">01</div>
-    <div class="cap-name"><span class="t" data-en="Branding" data-zh="品牌設計">Branding</span></div>
-    <div class="cap-desc l-en">I build identity systems — logos, guidelines, and a consistent voice across every touchpoint of a brand.</div>
-    <div class="cap-desc l-zh">打造完整的品牌識別系統——標誌、規範與一致的品牌語氣，貫穿每一個接觸點。</div>
+    <div class="cap-name"><span class="t" data-en="Branding" data-zh="品牌識別">Branding</span></div>
+    <div class="cap-desc l-en">I construct robust brand identity systems—including logos, design guidelines, and cohesive visual tones—ensuring consistency across every brand touchpoint.</div>
+    <div class="cap-desc l-zh">建立強大的品牌識別系統——涵蓋標誌、設計規範與一致的視覺語彙，確保品牌在每個接觸點都能精準傳達核心價值。</div>
   </div>
 
   <div class="cap-row reveal">
     <div class="cap-no">02</div>
-    <div class="cap-name"><span class="t" data-en="Social & Campaign" data-zh="社群與活動">Social &amp; Campaign</span></div>
-    <div class="cap-desc l-en">Scroll-stopping social and campaign creative that keeps one clear voice across every platform.</div>
-    <div class="cap-desc l-zh">能讓人停下滑動的社群與活動視覺，在各平台維持一致而清晰的品牌語氣。</div>
+    <div class="cap-name"><span class="t" data-en="Social & Campaign" data-zh="社群與活動視覺">Social &amp; Campaign</span></div>
+    <div class="cap-desc l-en">Designing scroll-stopping social media creatives and campaign assets that maintain a clear, unified brand voice across all digital platforms.</div>
+    <div class="cap-desc l-zh">打造能讓人停下指尖的社群與活動視覺，在各大數位平台中維持清晰且統一的品牌語氣。</div>
   </div>
 
   <div class="cap-row reveal">
     <div class="cap-no">03</div>
-    <div class="cap-name"><span class="t" data-en="E-commerce" data-zh="電商視覺">E-commerce</span></div>
-    <div class="cap-desc l-en">High-conversion key visuals and banners, sized for every store, marketplace, and ad placement.</div>
-    <div class="cap-desc l-zh">高轉化率的主視覺與橫幅，適配各電商、平台與廣告版位。</div>
+    <div class="cap-name"><span class="t" data-en="E-commerce" data-zh="電商設計">E-commerce</span></div>
+    <div class="cap-desc l-en">Producing high-conversion key visuals and adaptive banners optimized for diverse storefronts, online marketplaces, and targeted ad placements.</div>
+    <div class="cap-desc l-zh">製作高轉換率的主視覺與廣告橫幅，完美適配各種電商平台、網路商店與廣告版位需求。</div>
   </div>
 
   <div class="cap-row reveal">
     <div class="cap-no">04</div>
     <div class="cap-name"><span class="t" data-en="Packaging & Print" data-zh="包裝與印刷">Packaging &amp; Print</span></div>
-    <div class="cap-desc l-en">Retail packaging and print-ready files — bleeds and CMYK set up and ready for the printer.</div>
-    <div class="cap-desc l-zh">零售包裝與印刷檔案——出血與 CMYK 設定完成，可直接交付印刷。</div>
+    <div class="cap-desc l-en">Delivering eye-catching retail packaging and flawless print-ready files, meticulously set up with correct bleeds and CMYK profiles for immediate production.</div>
+    <div class="cap-desc l-zh">提供吸睛的零售包裝設計與零失誤的印刷檔案——精確設定出血範圍與 CMYK 色彩，隨時可交付印刷廠生產。</div>
   </div>
 
   <div class="cap-row reveal">
     <div class="cap-no">05</div>
     <div class="cap-name"><span class="t" data-en="Motion & Video" data-zh="動態影像">Motion &amp; Video</span></div>
-    <div class="cap-desc l-en">Short-form video and motion graphics for ads and social — After Effects, Premiere, and CapCut.</div>
-    <div class="cap-desc l-zh">廣告與社群的短影音與動態圖像——以 After Effects、Premiere、CapCut 製作。</div>
+    <div class="cap-desc l-en">Creating dynamic short-form videos and motion graphics for advertising and social media, utilizing After Effects, Premiere Pro, and CapCut.</div>
+    <div class="cap-desc l-zh">運用 After Effects、Premiere Pro 與 CapCut，為廣告與社群媒體製作充滿動感的短影音與動態圖像。</div>
   </div>
 
   <div style="height:80px"></div>
@@ -559,15 +617,15 @@
   <div class="stats" data-reveal-group="120">
     <div class="reveal-on-scroll">
       <div class="stat-num" data-target="10" data-suffix="+">0</div>
-      <div class="stat-label"><span class="t" data-en="Brands worked with" data-zh="合作品牌">Brands worked with</span></div>
+      <div class="stat-label"><span class="t" data-en="Brands worked with" data-zh="合作品牌數">Brands worked with</span></div>
     </div>
     <div class="reveal-on-scroll">
-      <div class="stat-num" data-target="4" data-suffix="">0</div>
-      <div class="stat-label"><span class="t" data-en="Years in brand design" data-zh="年品牌設計經驗">Years in brand design</span></div>
+      <div class="stat-num" data-target="2" data-suffix="+">0</div>
+      <div class="stat-label"><span class="t" data-en="Years in brand design" data-zh="品牌設計資歷">Years in brand design</span></div>
     </div>
     <div class="reveal-on-scroll">
       <div class="stat-num" data-target="5" data-suffix="">0</div>
-      <div class="stat-label"><span class="t" data-en="Core capabilities" data-zh="核心專長">Core capabilities</span></div>
+      <div class="stat-label"><span class="t" data-en="Core capabilities" data-zh="核心專業領域">Core capabilities</span></div>
     </div>
     <div class="reveal-on-scroll">
       <div class="stat-num" data-target="3" data-suffix="">0</div>
@@ -580,15 +638,15 @@
 <section id="contact">
 <div class="wide contact">
   <div class="eyebrow reveal-on-scroll"><span class="t" data-en="Contact" data-zh="聯絡">Contact</span></div>
-  <h2 class="l-en reveal-on-scroll" data-reveal-delay="80ms">Let's make something <span class="vio">memorable</span>.</h2>
-  <h2 class="l-zh reveal-on-scroll" data-reveal-delay="80ms">一起打造，<span class="vio">令人記住</span>的作品。</h2>
+  <h2 class="l-en reveal-on-scroll" data-reveal-delay="80ms">Let's build something <span class="vio">unforgettable</span>.</h2>
+  <h2 class="l-zh reveal-on-scroll" data-reveal-delay="80ms">讓我們一起創造<span class="vio">令人記住</span>的作品。</h2>
 
   <div class="reveal-on-scroll" data-reveal-delay="160ms">
     <a class="email" href="mailto:jucelynleezhilin99@gmail.com">jucelynleezhilin99@gmail.com</a>
   </div>
 
-  <p class="avail l-en reveal-on-scroll" data-reveal-delay="220ms">Open to full-time roles and freelance projects — branding, social, e-commerce, and packaging.</p>
-  <p class="avail l-zh reveal-on-scroll" data-reveal-delay="220ms">開放全職職缺與接案合作——品牌、社群、電商與包裝。</p>
+  <p class="avail l-en reveal-on-scroll" data-reveal-delay="220ms">I am currently open to full-time opportunities and freelance collaborations across branding, social media, e-commerce, and packaging design.</p>
+  <p class="avail l-zh reveal-on-scroll" data-reveal-delay="220ms">目前開放全職職缺與接案合作，專注於品牌識別、社群視覺、電商設計與包裝領域。歡迎隨時與我聯繫！</p>
 
   <div class="footer">
     <span>© 2026 — <span class="l-en">JUCELYN</span><span class="l-zh">智鈴</span></span>
@@ -604,7 +662,7 @@
   /* build the two SLOGANS as letters (typewriter + magnetic) */
   const enChars=[], zhChars=[];
   (function(){
-    const t="Branding for the brands people remember.", words=t.split(' '), host=document.getElementById('headline-en');
+    const t="Transforming strategic thinking into visual emotion.", words=t.split(' '), host=document.getElementById('headline-en');
     words.forEach((w,wi)=>{
       const wEl=document.createElement('span'); wEl.className='word'; const vio=(wi===words.length-1);
       [...w].forEach(c=>{ const s=document.createElement('span'); s.className='ch'+(vio?' vio':''); s.textContent=c; wEl.appendChild(s); enChars.push(s); });
@@ -613,7 +671,7 @@
     });
   })();
   (function(){
-    const t="用視覺創造記憶點，讓品牌一眼被記住。", host=document.getElementById('headline-zh'), vioFrom=t.indexOf('讓');
+    const t="將商業策略轉化為充滿溫度的視覺設計。", host=document.getElementById('headline-zh'), vioFrom=t.indexOf('讓');
     [...t].forEach((c,idx)=>{ const s=document.createElement('span'); s.className='ch'+(idx>=vioFrom?' vio':''); s.textContent=c; host.appendChild(s); zhChars.push(s);
       if(c==='，') host.appendChild(document.createElement('br')); });
   })();
@@ -703,6 +761,21 @@
       Object.keys(links).forEach(function(k){links[k].classList.remove('active');});
       if(links[id])links[id].classList.add('active'); }});},{rootMargin:'-45% 0px -45% 0px'});
     secs.forEach(function(s){io.observe(s);});
+  })();
+
+  /* stats count-up */
+  (function(){
+    var nums=document.querySelectorAll('.stat-num'); if(!nums.length)return;
+    function run(el){var t=+el.getAttribute('data-target')||0,sf=el.getAttribute('data-suffix')||'';
+      if(reduce){el.textContent=t+sf;return;}
+      var st=null,d=1200;
+      function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/d,1);
+        el.textContent=Math.round(t*(1-Math.pow(1-p,3)))+sf;
+        if(p<1)requestAnimationFrame(step);}
+      requestAnimationFrame(step);}
+    if(!('IntersectionObserver' in window)){nums.forEach(run);return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run(e.target);io.unobserve(e.target);}});},{threshold:.4});
+    nums.forEach(function(n){io.observe(n);});
   })();
 
 </script>

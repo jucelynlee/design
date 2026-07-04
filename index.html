@@ -347,13 +347,6 @@
     #contact .email{font-size:clamp(17px,5.5vw,26px);word-break:break-all}
   }
 
-
-  /* hero v2: greeting as giant purple H1, slogan as H4 subline */
-  #home h1{color:var(--violet-lt)}
-  #home .sub{margin-top:30px;font-family:var(--b);font-weight:500;font-size:clamp(17px,2vw,26px);line-height:1.6;color:rgba(245,238,222,.85);max-width:44ch}
-  #home .sub.l-zh{font-family:var(--sans-tc)}
-  @media(max-width:760px){#home .sub{font-size:16px;margin-top:20px}}
-
 </style>
 </head>
 <body>
@@ -374,10 +367,10 @@
   
 
   <div class="hero-main">
+    <p class="greet l-en swap">Hello, I am Jucelyn!</p>
+    <p class="greet l-zh swap">你好！我是 Jucelyn！</p>
     <h1 class="l-en" id="headline-en"></h1>
     <h1 class="l-zh" id="headline-zh"></h1>
-    <p class="sub l-en swap">Branding for the brands people remember.</p>
-    <p class="sub l-zh swap">用視覺創造記憶點，讓品牌一眼被記住。</p>
   </div>
 
   <div class="herofoot">
@@ -669,7 +662,7 @@
   /* build the two SLOGANS as letters (typewriter + magnetic) */
   const enChars=[], zhChars=[];
   (function(){
-    const t="Hello, I am Jucelyn!", words=t.split(' '), host=document.getElementById('headline-en');
+    const t="Transforming strategic thinking into visual emotion.", words=t.split(' '), host=document.getElementById('headline-en');
     words.forEach((w,wi)=>{
       const wEl=document.createElement('span'); wEl.className='word'; const vio=(wi===words.length-1);
       [...w].forEach(c=>{ const s=document.createElement('span'); s.className='ch'+(vio?' vio':''); s.textContent=c; wEl.appendChild(s); enChars.push(s); });
@@ -678,7 +671,7 @@
     });
   })();
   (function(){
-    const t="你好！我是 Jucelyn！", host=document.getElementById('headline-zh'), vioFrom=t.indexOf('讓');
+    const t="將商業策略轉化為充滿溫度的視覺設計。", host=document.getElementById('headline-zh'), vioFrom=t.indexOf('讓');
     [...t].forEach((c,idx)=>{ const s=document.createElement('span'); s.className='ch'+(idx>=vioFrom?' vio':''); s.textContent=c; host.appendChild(s); zhChars.push(s);
       if(c==='，') host.appendChild(document.createElement('br')); });
   })();

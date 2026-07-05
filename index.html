@@ -54,11 +54,10 @@ body.zh .zhf{font-family:var(--tc)}
 }
 
 /* ============ FRAME + HEADER (absolute — scrolls away) ============ */
-.frame{position:fixed;inset:var(--frame);border:1px solid var(--line);pointer-events:none;z-index:80}
-.brand{position:absolute;top:calc(var(--frame) + 14px);left:calc(var(--frame) + 18px);z-index:90;
+.brand{position:absolute;top:32px;left:40px;z-index:90;
   font-family:var(--d);font-weight:900;font-size:15px;letter-spacing:.02em;color:var(--violet-lt)}
 .brand small{display:block;font-family:var(--m);font-weight:400;font-size:10px;letter-spacing:.18em;color:var(--muted);margin-top:3px;text-transform:uppercase}
-.nav{position:absolute;top:calc(var(--frame) + 14px);right:calc(var(--frame) + 18px);z-index:90;
+.nav{position:absolute;top:32px;right:40px;z-index:90;
   display:flex;align-items:center;gap:22px;font-family:var(--m);font-size:12px;letter-spacing:.08em}
 .nav a{color:var(--muted);transition:color .2s}
 .nav a:hover{color:var(--fg)}
@@ -85,7 +84,7 @@ body.zh .zhf{font-family:var(--tc)}
   display:grid}
 .full{height:100vh;height:100dvh}
 .tall{min-height:100vh;min-height:100dvh}
-.banner{scroll-snap-align:none;height:auto;min-height:0;padding-top:10vh;padding-bottom:10vh}
+.banner{scroll-snap-align:none;height:auto;min-height:0;padding-top:calc(var(--frame) + 64px);padding-bottom:calc(var(--frame) + 64px)}
 
 /* ============ REVEAL ============ */
 .reveal-on-scroll{opacity:0;transform:translateY(var(--reveal-distance));
@@ -99,7 +98,7 @@ body.zh .zhf{font-family:var(--tc)}
 
 /* ============ 01 HERO ============ */
 #home{grid-template-rows:auto 1fr auto;row-gap:20px;overflow:hidden}
-.mq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:26px}
+.mq{overflow:hidden;border-bottom:1px solid var(--line);margin-top:26px}
 .mq-track{display:flex;width:max-content;white-space:nowrap;animation:mq 30s linear infinite;will-change:transform}
 .mq-track:hover{animation-play-state:paused}
 .mq-group{display:flex;align-items:center;flex:0 0 auto;padding:11px 0}
@@ -108,7 +107,7 @@ body.zh .zhf{font-family:var(--tc)}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .hero-mid{display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
 #home h1{font-family:var(--d);font-weight:900;text-transform:uppercase;
-  font-size:clamp(58px,12.5vw,190px);line-height:.9;letter-spacing:-.025em}
+  font-size:clamp(58px,12.5vw,190px);line-height:1.02;letter-spacing:-.025em}
 #home h1 .hline{display:block;opacity:0;transform:translateY(46px);animation:heroUp .85s var(--reveal-easing) forwards}
 #home h1 .hline:nth-child(1){animation-delay:.10s}
 #home h1 .hline:nth-child(2){animation-delay:.26s}
@@ -172,7 +171,7 @@ body.zh .about-left h2{font-family:var(--tc);text-transform:none;letter-spacing:
 .s-head h2{font-family:var(--d);font-weight:900;text-transform:uppercase;font-size:clamp(38px,6.4vw,96px);line-height:.9;letter-spacing:-.02em}
 body.zh .s-head h2{font-family:var(--tc);text-transform:none;letter-spacing:0}
 .cap-list{align-self:center}
-.cap-row{display:grid;grid-template-columns:80px 1fr 350px;gap:clamp(14px,3vw,44px);
+.cap-row{display:grid;grid-template-columns:80px 1fr minmax(300px,460px);gap:clamp(14px,3vw,44px);
   align-items:start;padding:8vh 0;border-bottom:1px solid var(--line);
   transition:background .35s ease,padding-left .35s ease}
 @media(pointer:fine){
@@ -184,12 +183,13 @@ body.zh .s-head h2{font-family:var(--tc);text-transform:none;letter-spacing:0}
 .cap-no{font-family:var(--m);font-size:12px;color:var(--violet-lt);padding-top:10px}
 .cap-name{font-family:var(--d);font-weight:900;text-transform:uppercase;font-size:clamp(30px,4.6vw,72px);line-height:.95;letter-spacing:-.015em}
 body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
-.cap-desc{font-size:14px;line-height:1.7;color:rgba(245,238,222,.72);max-width:350px;justify-self:end}
+.cap-desc{font-size:14.5px;line-height:1.75;color:rgba(245,238,222,.72);max-width:460px;justify-self:end}
 .cap-desc.l-zh{font-family:var(--tc)}
 
 /* ============ 05 CONTACT ============ */
 #contact{grid-template-rows:1fr auto}
-.c-mid{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:clamp(18px,3vh,30px)}
+
+.c-mid{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:clamp(18px,3vh,30px)}
 .c-mid h3{font-family:var(--d);font-weight:800;text-transform:uppercase;font-size:clamp(18px,2.4vw,32px);letter-spacing:-.01em;color:rgba(245,238,222,.85)}
 .c-mid h3 .vio{color:var(--violet-lt)}
 .c-mid h3.l-zh{font-family:var(--tc);text-transform:none;letter-spacing:0}
@@ -198,8 +198,10 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
 .git:hover{color:var(--violet-lt)}
 .c-div{border:0;border-top:1px solid var(--line);margin:8vh 0}
 .c-below{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
-.email-link{font-family:var(--m);font-size:clamp(13px,1.6vw,17px);letter-spacing:.04em;color:var(--fg);
-  text-decoration:underline;text-underline-offset:6px}
+.email-link{font-family:var(--b);font-weight:600;font-size:clamp(24px,3vw,48px);letter-spacing:-.01em;color:var(--fg);
+  text-decoration:underline;text-underline-offset:8px;display:inline-flex;align-items:center;gap:12px}
+.email-link .ar{font-family:var(--d);transition:transform .25s}
+.email-link:hover .ar{transform:translate(4px,-4px)}
 .email-link:hover{color:var(--violet-lt)}
 .c-foot{display:flex;gap:26px;align-items:flex-end;font-family:var(--m);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .c-foot a:hover{color:var(--fg)}
@@ -207,6 +209,9 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
 /* ============ RWD ============ */
 @media(min-width:768px) and (max-width:1024px){
   .stats-strip{grid-template-columns:1fr 1fr;gap:36px 24px}
+  .cap-row{grid-template-columns:56px 1fr}
+  .cap-row>div:last-child{grid-column:2;justify-self:start;margin-top:10px}
+  .cap-desc{justify-self:start;max-width:60ch}
   #home h1{font-size:clamp(56px,13vw,120px)}
 }
 @media(max-width:767px){
@@ -215,7 +220,7 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
   .slide{padding:calc(var(--frame) + 76px) calc(var(--frame) + var(--pad)) calc(var(--frame) + 40px)}
   .full,.tall{height:auto;min-height:100vh;min-height:100dvh}
 
-  .brand{left:calc(var(--frame) + 12px);font-size:12.5px}
+  .brand{left:20px;top:24px;font-size:12.5px}
   .nav{display:none}
   .edge-r{display:none}
   .mbtn{display:inline-flex;align-items:center;gap:8px;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
@@ -239,10 +244,10 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
   .cap-desc{max-width:none;justify-self:start}
 
   .git{font-size:clamp(40px,12.5vw,64px)}
+  .email-link{font-size:clamp(19px,5.8vw,26px);word-break:break-all}
   .c-div{margin:7vh 0}
   .c-below{flex-direction:column;align-items:flex-start;gap:16px}
   .c-foot{flex-wrap:wrap;gap:14px}
-  .banner{padding-top:9vh;padding-bottom:9vh}
 }
 </style>
 </head>
@@ -250,7 +255,6 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
 <div class="cursor-ring" id="ring"></div>
 <div class="cursor-dot" id="dot"></div>
 
-<div class="frame"></div>
 <div class="edge-r"><b id="secNow">01</b> / 05</div>
 
 <!-- mobile menu -->
@@ -340,7 +344,7 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
 <section class="slide banner" id="stats" data-sec="03">
   <div class="stats-strip reveal-on-scroll">
     <div class="stat"><div class="n" data-target="10" data-suffix="+">0</div><div class="k"><span class="t" data-en="Brands worked with" data-zh="合作品牌數">Brands worked with</span></div></div>
-    <div class="stat"><div class="n" data-target="2" data-suffix="+">0</div><div class="k"><span class="t" data-en="Years in brand design" data-zh="品牌設計資歷">Years in brand design</span></div></div>
+    <div class="stat"><div class="n" data-target="4" data-suffix="+">0</div><div class="k"><span class="t" data-en="Years in brand design" data-zh="品牌設計資歷">Years in brand design</span></div></div>
     <div class="stat"><div class="n" data-target="5" data-suffix="">0</div><div class="k"><span class="t" data-en="Core capabilities" data-zh="核心專業領域">Core capabilities</span></div></div>
     <div class="stat"><div class="n" data-target="3" data-suffix="">0</div><div class="k"><span class="t" data-en="Languages" data-zh="掌握語言">Languages</span></div></div>
   </div>
@@ -355,42 +359,34 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
   <div class="cap-list">
     <div class="cap-row reveal-on-scroll">
       <div class="cap-no">01</div>
-      <div class="cap-name"><span class="t" data-en="Branding" data-zh="品牌識別">Branding</span></div>
+      <div class="cap-name"><span class="t" data-en="Branding &amp; Identity" data-zh="品牌識別與形象">Branding &amp; Identity</span></div>
       <div>
-        <div class="cap-desc l-en">I construct robust brand identity systems—including logos, design guidelines, and cohesive visual tones—ensuring consistency across every brand touchpoint.</div>
-        <div class="cap-desc l-zh">建立強大的品牌識別系統——涵蓋標誌、設計規範與一致的視覺語彙，確保品牌在每個接觸點都能精準傳達核心價值。</div>
+        <div class="cap-desc l-en">Building comprehensive brand systems from the ground up. I design cohesive visual guidelines, high-impact event key visuals, and compelling crowdfunding pages that establish a strong, memorable market presence.</div>
+        <div class="cap-desc l-zh">從零開始建構完整的品牌系統——設計一致的視覺規範、高衝擊力的活動主視覺，以及具說服力的群眾募資頁面，為品牌建立強烈且令人記住的市場定位。</div>
       </div>
     </div>
     <div class="cap-row reveal-on-scroll">
       <div class="cap-no">02</div>
-      <div class="cap-name"><span class="t" data-en="Social &amp; Campaign" data-zh="社群與活動視覺">Social &amp; Campaign</span></div>
+      <div class="cap-name"><span class="t" data-en="E-commerce &amp; Campaigns" data-zh="電商與行銷活動">E-commerce &amp; Campaigns</span></div>
       <div>
-        <div class="cap-desc l-en">Designing scroll-stopping social media creatives and campaign assets that maintain a clear, unified brand voice across all digital platforms.</div>
-        <div class="cap-desc l-zh">打造能讓人停下指尖的社群與活動視覺，在各大數位平台中維持清晰且統一的品牌語氣。</div>
+        <div class="cap-desc l-en">Crafting high-conversion digital assets tailored for global storefronts. I create adaptive promotional banners, detailed product landing pages, and meticulously resize creatives to perfectly fit diverse marketplace requirements.</div>
+        <div class="cap-desc l-zh">為全球電商平台打造高轉換率的數位素材——製作靈活適配的促銷橫幅與詳盡的產品落地頁，並精準調整素材尺寸，完美符合各平台的規範需求。</div>
       </div>
     </div>
     <div class="cap-row reveal-on-scroll">
       <div class="cap-no">03</div>
-      <div class="cap-name"><span class="t" data-en="E-commerce" data-zh="電商設計">E-commerce</span></div>
+      <div class="cap-name"><span class="t" data-en="Social Media &amp; Motion" data-zh="社群媒體與動態影音">Social Media &amp; Motion</span></div>
       <div>
-        <div class="cap-desc l-en">Producing high-conversion key visuals and adaptive banners optimized for diverse storefronts, online marketplaces, and targeted ad placements.</div>
-        <div class="cap-desc l-zh">製作高轉換率的主視覺與廣告橫幅，完美適配各種電商平台、網路商店與廣告版位需求。</div>
+        <div class="cap-desc l-en">Driving digital engagement through scroll-stopping content. I manage social visual strategies, design dynamic daily posts, and shoot/edit short-form video ads that capture attention and elevate the brand's online narrative.</div>
+        <div class="cap-desc l-zh">以令人停下滑動的內容驅動數位互動——規劃社群視覺策略、設計每日貼文，並拍攝與剪輯短影音廣告，抓住目光、提升品牌的線上聲量。</div>
       </div>
     </div>
     <div class="cap-row reveal-on-scroll">
       <div class="cap-no">04</div>
       <div class="cap-name"><span class="t" data-en="Packaging &amp; Print" data-zh="包裝與印刷">Packaging &amp; Print</span></div>
       <div>
-        <div class="cap-desc l-en">Delivering eye-catching retail packaging and flawless print-ready files, meticulously set up with correct bleeds and CMYK profiles for immediate production.</div>
-        <div class="cap-desc l-zh">提供吸睛的零售包裝設計與零失誤的印刷檔案——精確設定出血範圍與 CMYK 色彩，隨時可交付印刷廠生產。</div>
-      </div>
-    </div>
-    <div class="cap-row reveal-on-scroll">
-      <div class="cap-no">05</div>
-      <div class="cap-name"><span class="t" data-en="Motion &amp; Video" data-zh="動態與影音">Motion &amp; Video</span></div>
-      <div>
-        <div class="cap-desc l-en">Creating dynamic short-form videos and motion graphics for advertising and social media, utilizing After Effects, Premiere Pro, and CapCut.</div>
-        <div class="cap-desc l-zh">運用 After Effects、Premiere Pro 與 CapCut，為廣告與社群媒體製作充滿動感的短影音與動態圖像。</div>
+        <div class="cap-desc l-en">Translating digital concepts into tangible physical experiences. I deliver eye-catching retail packaging optimized for US markets and design large-scale exhibition materials, ensuring flawless print production for international trade shows.</div>
+        <div class="cap-desc l-zh">將數位概念轉化為實體體驗——打造針對美國市場優化的零售包裝與大型展會物料，確保國際展會的印刷製作完美無誤。</div>
       </div>
     </div>
   </div>
@@ -407,7 +403,7 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
   <div>
     <hr class="c-div">
     <div class="c-below">
-      <a class="email-link" href="mailto:jucelynleezhilin99@gmail.com">jucelynleezhilin99@gmail.com</a>
+      <a class="email-link" href="mailto:jucelynleezhilin99@gmail.com">jucelynleezhilin99@gmail.com <span class="ar">↗</span></a>
       <div class="c-foot">
         <span>© <span class="l-en">JUCELYN</span><span class="l-zh zhf">智鈴</span></span>
         <a href="#top"><span class="t" data-en="Back to top ↑" data-zh="回到頂部 ↑">Back to top ↑</span></a>

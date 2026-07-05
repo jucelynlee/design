@@ -189,16 +189,15 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
 /* ============ 05 CONTACT ============ */
 #contact{grid-template-rows:1fr auto}
 
-.c-mid{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:clamp(18px,3vh,30px)}
-.c-mid h3{font-family:var(--d);font-weight:800;text-transform:uppercase;font-size:clamp(18px,2.4vw,32px);letter-spacing:-.01em;color:rgba(245,238,222,.85)}
-.c-mid h3 .vio{color:var(--violet-lt)}
-.c-mid h3.l-zh{font-family:var(--tc);text-transform:none;letter-spacing:0}
-.git{font-family:var(--d);font-weight:900;text-transform:uppercase;
-  font-size:clamp(44px,9.5vw,150px);line-height:.95;letter-spacing:-.025em;color:var(--fg);transition:color .25s}
-.git:hover{color:var(--violet-lt)}
+#contact{padding-top:15vh}
+.contact-cta-wrapper{display:flex;flex-direction:column;align-items:flex-start;gap:clamp(16px,2vw,32px)}
+.contact-cta-wrapper h2{font-family:var(--d);font-weight:900;text-transform:uppercase;
+  font-size:clamp(40px,7.5vw,120px);line-height:.98;letter-spacing:-.025em;color:var(--fg);max-width:14ch}
+.contact-cta-wrapper h2 .vio{color:var(--violet-lt)}
+.contact-cta-wrapper h2.l-zh{font-family:var(--tc);text-transform:none;letter-spacing:0;line-height:1.12}
 .c-div{border:0;border-top:1px solid var(--line);margin:8vh 0}
 .c-below{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
-.email-link{font-family:var(--b);font-weight:600;font-size:clamp(24px,3vw,48px);letter-spacing:-.01em;color:var(--fg);
+.email-link{font-family:var(--b);font-weight:700;font-size:clamp(24px,3vw,40px);letter-spacing:-.01em;color:var(--fg);
   text-decoration:underline;text-underline-offset:8px;display:inline-flex;align-items:center;gap:12px}
 .email-link .ar{font-family:var(--d);transition:transform .25s}
 .email-link:hover .ar{transform:translate(4px,-4px)}
@@ -243,7 +242,9 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
   .cap-row{display:flex;flex-direction:column;gap:16px;padding:7vh 0;padding-left:0}
   .cap-desc{max-width:none;justify-self:start}
 
-  .git{font-size:clamp(40px,12.5vw,64px)}
+  #contact{padding-top:12vh}
+  .contact-cta-wrapper{gap:18px}
+  .contact-cta-wrapper h2{font-size:clamp(34px,10.5vw,52px)}
   .email-link{font-size:clamp(19px,5.8vw,26px);word-break:break-all}
   .c-div{margin:7vh 0}
   .c-below{flex-direction:column;align-items:flex-start;gap:16px}
@@ -394,16 +395,15 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
 
 <!-- ============ 05 CONTACT ============ -->
 <section class="slide full" id="contact" data-sec="05">
-  <div class="c-mid">
-    <h3 class="l-en reveal-on-scroll">Let's build something <span class="vio">unforgettable</span>.</h3>
-    <h3 class="l-zh reveal-on-scroll">讓我們一起創造<span class="vio">令人記住</span>的作品。</h3>
-    <a class="git reveal-on-scroll" data-reveal-delay="120ms" href="mailto:jucelynleezhilin99@gmail.com"><span class="t" data-en="Get in touch" data-zh="與我聯繫">Get in touch</span> ↗</a>
+  <div class="contact-cta-wrapper">
+    <h2 class="l-en reveal-on-scroll">Let's build something <span class="vio">unforgettable</span>.</h2>
+    <h2 class="l-zh reveal-on-scroll">讓我們一起創造<span class="vio">令人記住</span>的作品。</h2>
+    <a class="email-link reveal-on-scroll" data-reveal-delay="140ms" href="mailto:jucelynleezhilin99@gmail.com">jucelynleezhilin99@gmail.com <span class="ar">↗</span></a>
   </div>
 
   <div>
     <hr class="c-div">
     <div class="c-below">
-      <a class="email-link" href="mailto:jucelynleezhilin99@gmail.com">jucelynleezhilin99@gmail.com <span class="ar">↗</span></a>
       <div class="c-foot">
         <span>© <span class="l-en">JUCELYN</span><span class="l-zh zhf">智鈴</span></span>
         <a href="#top"><span class="t" data-en="Back to top ↑" data-zh="回到頂部 ↑">Back to top ↑</span></a>

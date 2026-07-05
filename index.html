@@ -28,7 +28,7 @@
   --reveal-easing:cubic-bezier(.22,.61,.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity}
 body{background:var(--bg);color:var(--fg);font-family:var(--b);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -85,6 +85,7 @@ body.zh .zhf{font-family:var(--tc)}
   display:grid}
 .full{height:100vh;height:100dvh}
 .tall{min-height:100vh;min-height:100dvh}
+.banner{scroll-snap-align:none;height:auto;min-height:0;padding-top:10vh;padding-bottom:10vh}
 
 /* ============ REVEAL ============ */
 .reveal-on-scroll{opacity:0;transform:translateY(var(--reveal-distance));
@@ -110,13 +111,16 @@ body.zh .zhf{font-family:var(--tc)}
   font-size:clamp(58px,12.5vw,190px);line-height:.9;letter-spacing:-.025em}
 #home h1 .hline{display:block;opacity:0;transform:translateY(46px);animation:heroUp .85s var(--reveal-easing) forwards}
 #home h1 .hline:nth-child(1){animation-delay:.10s}
-#home h1 .hline:nth-child(2){animation-delay:.24s}
-#home h1 .hline:nth-child(3){animation-delay:.38s}
+#home h1 .hline:nth-child(2){animation-delay:.26s}
 @keyframes heroUp{to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){#home h1 .hline{opacity:1;transform:none;animation:none}}
+@media(prefers-reduced-motion:reduce){#home h1 .hline,#home .hero-sub h4,#home .hero-sub .disc,#home .hero-sub .cta{opacity:1;transform:none;animation:none}}
 #home h1 .vio{color:var(--violet-lt)}
 #home h1.l-zh{font-family:var(--tc);text-transform:none;letter-spacing:0;line-height:1.04}
 .hero-sub{margin-top:34px}
+#home .hero-sub h4,#home .hero-sub .disc,#home .hero-sub .cta{opacity:0;animation:heroUp .8s var(--reveal-easing) forwards}
+#home .hero-sub h4{animation-delay:.5s}
+#home .hero-sub .disc{animation-delay:.62s}
+#home .hero-sub .cta{animation-delay:.74s}
 .hero-sub h4{font-family:var(--b);font-weight:500;font-size:clamp(16px,1.9vw,24px);color:rgba(245,238,222,.85)}
 .hero-sub h4.l-zh{font-family:var(--tc)}
 .hero-sub .disc{margin-top:10px;font-family:var(--m);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
@@ -201,6 +205,10 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
 .c-foot a:hover{color:var(--fg)}
 
 /* ============ RWD ============ */
+@media(min-width:768px) and (max-width:1024px){
+  .stats-strip{grid-template-columns:1fr 1fr;gap:36px 24px}
+  #home h1{font-size:clamp(56px,13vw,120px)}
+}
 @media(max-width:767px){
   :root{--frame:8px;--pad:16px}
   html{scroll-snap-type:none}
@@ -234,6 +242,7 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
   .c-div{margin:7vh 0}
   .c-below{flex-direction:column;align-items:flex-start;gap:16px}
   .c-foot{flex-wrap:wrap;gap:14px}
+  .banner{padding-top:9vh;padding-bottom:9vh}
 }
 </style>
 </head>
@@ -271,13 +280,13 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
   </div>
 
   <div class="hero-mid">
-    <h1 class="l-en"><span class="hline">Hi</span><span class="hline">I am</span><span class="hline vio">Jucelyn</span></h1>
-    <h1 class="l-zh zhf"><span class="hline">你好！</span><span class="hline">我是</span><span class="hline vio">Jucelyn</span></h1>
+    <h1 class="l-en"><span class="hline">Hi, I am</span><span class="hline vio">Jucelyn</span></h1>
+    <h1 class="l-zh zhf"><span class="hline">你好！我是</span><span class="hline vio">Jucelyn</span></h1>
     <div class="hero-sub">
-      <h4 class="l-en reveal-on-scroll" data-reveal-delay="150ms">Branding for the brands people remember.</h4>
-      <h4 class="l-zh zhf reveal-on-scroll" data-reveal-delay="150ms">用視覺創造記憶點，讓品牌一眼被記住。</h4>
-      <div class="disc reveal-on-scroll" data-reveal-delay="260ms"><span class="t" data-en="Branding · Social · Packaging" data-zh="品牌識別 · 社群視覺 · 包裝設計">Branding · Social · Packaging</span></div>
-      <div class="cta reveal-on-scroll" data-reveal-delay="370ms">
+      <h4 class="l-en">Branding for the brands people remember.</h4>
+      <h4 class="l-zh zhf">用視覺創造記憶點，讓品牌一眼被記住。</h4>
+      <div class="disc"><span class="t" data-en="Branding · Social · Packaging" data-zh="品牌識別 · 社群視覺 · 包裝設計">Branding · Social · Packaging</span></div>
+      <div class="cta">
         <a class="btn-solid" href="#contact"><span class="t" data-en="Start your project" data-zh="開始合作">Start your project</span> <span class="ar">→</span></a>
         <a class="btn-link" href="works.html"><span class="t" data-en="See work" data-zh="查看作品">See work</span></a>
       </div>
@@ -328,7 +337,7 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
 </section>
 
 <!-- ============ 03 STATS ============ -->
-<section class="slide full" id="stats" data-sec="03">
+<section class="slide banner" id="stats" data-sec="03">
   <div class="stats-strip reveal-on-scroll">
     <div class="stat"><div class="n" data-target="10" data-suffix="+">0</div><div class="k"><span class="t" data-en="Brands worked with" data-zh="合作品牌數">Brands worked with</span></div></div>
     <div class="stat"><div class="n" data-target="2" data-suffix="+">0</div><div class="k"><span class="t" data-en="Years in brand design" data-zh="品牌設計資歷">Years in brand design</span></div></div>

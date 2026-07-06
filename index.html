@@ -110,8 +110,8 @@ body.zh .zhf{font-family:var(--tc)}
   font-size:clamp(58px,12.5vw,190px);line-height:1.02;letter-spacing:-.025em}
 #home h1{position:relative}
 #home h1 .hline{display:block;white-space:nowrap}
-#home h1 .ghost{visibility:hidden}
-#home h1 .type{position:absolute;top:0;left:0;right:0}
+#home h1 .ghost{display:block;visibility:hidden}
+#home h1 .type{display:block;position:absolute;top:0;left:0;right:0}
 #home h1 .cur{display:inline;color:var(--violet-lt);font-weight:400;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 @keyframes heroUp{to{opacity:1;transform:none}}
@@ -247,7 +247,7 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
 
   #contact{padding-top:12vh}
   .contact-cta-wrapper{gap:18px}
-  .contact-cta-wrapper h2{font-size:clamp(26px,7.4vw,42px);word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}
+  .contact-cta-wrapper h2{font-size:clamp(24px,7vw,40px);max-width:100%;word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}
   .email-link{font-size:clamp(19px,5.8vw,26px);word-break:break-all}
   .c-div{margin:7vh 0}
   .c-below{flex-direction:column;align-items:flex-start;gap:16px}

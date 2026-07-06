@@ -28,8 +28,8 @@
   --reveal-easing:cubic-bezier(.22,.61,.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-snap-type:y proximity}
-body{background:var(--bg);color:var(--fg);font-family:var(--b);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);color:var(--fg);font-family:var(--b);-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100vw}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 b{color:var(--fg)}
@@ -98,19 +98,22 @@ body.zh .zhf{font-family:var(--tc)}
 
 /* ============ 01 HERO ============ */
 #home{grid-template-rows:auto 1fr auto;row-gap:20px;overflow:hidden}
-.mq{overflow:hidden;border-bottom:1px solid var(--line);margin-top:26px}
+.mq{overflow:hidden;max-width:100%;background:var(--violet);margin-top:26px}
 .mq-track{display:flex;width:max-content;white-space:nowrap;animation:mq 30s linear infinite;will-change:transform}
 .mq-track:hover{animation-play-state:paused}
 .mq-group{display:flex;align-items:center;flex:0 0 auto;padding:11px 0}
-.mq-group span{font-family:var(--m);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);padding:0 24px}
-.mq-group i{font-style:normal;color:var(--violet-lt)}
+.mq-group span{font-family:var(--m);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#161210;padding:0 24px}
+.mq-group i{font-style:normal;color:#161210;opacity:.5}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .hero-mid{display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
 #home h1{font-family:var(--d);font-weight:900;text-transform:uppercase;
   font-size:clamp(58px,12.5vw,190px);line-height:1.02;letter-spacing:-.025em}
-#home h1 .hline{display:block;opacity:0;transform:translateY(46px);animation:heroUp .85s var(--reveal-easing) forwards}
-#home h1 .hline:nth-child(1){animation-delay:.10s}
-#home h1 .hline:nth-child(2){animation-delay:.26s}
+#home h1{position:relative}
+#home h1 .hline{display:block;white-space:nowrap}
+#home h1 .ghost{visibility:hidden}
+#home h1 .type{position:absolute;top:0;left:0;right:0}
+#home h1 .cur{display:inline;color:var(--violet-lt);font-weight:400;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
 @keyframes heroUp{to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#home h1 .hline,#home .hero-sub h4,#home .hero-sub .disc,#home .hero-sub .cta{opacity:1;transform:none;animation:none}}
 #home h1 .vio{color:var(--violet-lt)}
@@ -197,7 +200,7 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
 .contact-cta-wrapper h2.l-zh{font-family:var(--tc);text-transform:none;letter-spacing:0;line-height:1.12}
 .c-div{border:0;border-top:1px solid var(--line);margin:8vh 0}
 .c-below{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
-.email-link{font-family:var(--b);font-weight:700;font-size:clamp(24px,3vw,40px);letter-spacing:-.01em;color:var(--fg);
+.email-link{font-family:var(--b);font-weight:600;font-size:clamp(24px,3vw,40px);letter-spacing:-.01em;color:var(--fg);
   text-decoration:underline;text-underline-offset:8px;display:inline-flex;align-items:center;gap:12px}
 .email-link .ar{font-family:var(--d);transition:transform .25s}
 .email-link:hover .ar{transform:translate(4px,-4px)}
@@ -244,7 +247,7 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
 
   #contact{padding-top:12vh}
   .contact-cta-wrapper{gap:18px}
-  .contact-cta-wrapper h2{font-size:clamp(34px,10.5vw,52px)}
+  .contact-cta-wrapper h2{font-size:clamp(26px,7.4vw,42px);word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}
   .email-link{font-size:clamp(19px,5.8vw,26px);word-break:break-all}
   .c-div{margin:7vh 0}
   .c-below{flex-direction:column;align-items:flex-start;gap:16px}
@@ -285,7 +288,7 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
   </div>
 
   <div class="hero-mid">
-    <h1 class="l-en"><span class="hline">Hi, I am</span><span class="hline vio">Jucelyn</span></h1>
+    <h1 class="l-en" id="hl-en"><span class="ghost" aria-hidden="true"><span class="hline">Hi, I am</span><span class="hline vio">Jucelyn</span></span><span class="type"><span class="hline"><span id="tw1"></span><span class="cur" id="cur1">|</span></span><span class="hline vio"><span id="tw2"></span><span class="cur" id="cur2" style="display:none">|</span></span></span></h1>
     <h1 class="l-zh zhf"><span class="hline">你好！我是</span><span class="hline vio">Jucelyn</span></h1>
     <div class="hero-sub">
       <h4 class="l-en">Branding for the brands people remember.</h4>
@@ -346,7 +349,7 @@ body.zh .cap-name{font-family:var(--tc);text-transform:none;letter-spacing:0}
   <div class="stats-strip reveal-on-scroll">
     <div class="stat"><div class="n" data-target="10" data-suffix="+">0</div><div class="k"><span class="t" data-en="Brands worked with" data-zh="合作品牌數">Brands worked with</span></div></div>
     <div class="stat"><div class="n" data-target="4" data-suffix="+">0</div><div class="k"><span class="t" data-en="Years in brand design" data-zh="品牌設計資歷">Years in brand design</span></div></div>
-    <div class="stat"><div class="n" data-target="5" data-suffix="">0</div><div class="k"><span class="t" data-en="Core capabilities" data-zh="核心專業領域">Core capabilities</span></div></div>
+    <div class="stat"><div class="n" data-target="4" data-suffix="">0</div><div class="k"><span class="t" data-en="Core capabilities" data-zh="核心專業領域">Core capabilities</span></div></div>
     <div class="stat"><div class="n" data-target="3" data-suffix="">0</div><div class="k"><span class="t" data-en="Languages" data-zh="掌握語言">Languages</span></div></div>
   </div>
 </section>
@@ -426,6 +429,25 @@ function setLang(l){
 
 /* ---------- mobile menu ---------- */
 function mToggle(){ document.getElementById('mov').classList.toggle('open'); }
+
+/* ---------- hero typewriter (2 lines, blinking caret) ---------- */
+(function(){
+  const l1="Hi, I am", l2="Jucelyn";
+  const t1=document.getElementById('tw1'), t2=document.getElementById('tw2');
+  const c1=document.getElementById('cur1'), c2=document.getElementById('cur2');
+  if(!t1) return;
+  if(reduce){ t1.textContent=l1; t2.textContent=l2; return; }
+  let i=0,j=0;
+  function typeL1(){
+    if(i<=l1.length){ t1.textContent=l1.slice(0,i); i++; setTimeout(typeL1,72); }
+    else { c1.style.display='none'; c2.style.display='inline-block'; setTimeout(typeL2,280); }
+  }
+  function typeL2(){
+    if(j<=l2.length){ t2.textContent=l2.slice(0,j); j++; setTimeout(typeL2,88); }
+    else { c2.style.display='none'; c2.style.animation='none'; }
+  }
+  setTimeout(typeL1,350);
+})();
 
 /* ---------- scroll reveal ---------- */
 (function(){

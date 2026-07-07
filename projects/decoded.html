@@ -54,7 +54,9 @@
   .intro.l-zh{font-family:var(--sans-tc);line-height:1.65}
 
   /* METADATA GRID: services / challenge / role */
-  .meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:44px;border-top:1px solid var(--line);margin-top:48px;padding-top:46px}
+  .meta{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,64px);border-top:1px solid var(--line);margin-top:48px;padding-top:46px}
+  .m-cell>p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  @media(max-width:767px){.m-cell>p{display:block;-webkit-line-clamp:unset;overflow:visible}}
   .m-label{font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--violet-lt);margin-bottom:18px}
   .m-cell p{font-size:15.5px;line-height:1.75;color:rgba(245,238,222,.74)}
   .m-cell.l-zh p,.m-cell p.l-zh{font-family:var(--sans-tc)}
@@ -93,6 +95,11 @@
     .meta{grid-template-columns:1fr;gap:34px}
     .gallery{grid-template-columns:1fr}.g-full,.g-half{aspect-ratio:4/3}
   }
+  .top .rt .yr{color:var(--violet-lt)}
+  @media(min-width:768px){
+    .top{align-items:flex-end}
+    .top .rt{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:10px}
+  }
 </style>
 </head>
 <body>
@@ -101,7 +108,7 @@
 
 <header>
   <div class="wide bar">
-    <a class="crumb" href="../index.html#work">‹ <span class="t" data-en="Projects" data-zh="作品">Projects</span> / <b>DECODED</b></a>
+    <a class="crumb" href="../works.html">‹ <span class="t" data-en="Projects" data-zh="作品">Projects</span> / <b>DECODED</b></a>
     <div class="toggle"><button id="b-en" class="on" onclick="setLang('en')">EN</button><button id="b-zh" onclick="setLang('zh')">中</button></div>
   </div>
 </header>
@@ -119,23 +126,15 @@
   <p class="intro l-zh reveal-on-scroll">為高端裝置防護配件品牌打造的產品與活動視覺，面向重視設計的受眾。</p>
 
   <div class="meta">
-    <div class="m-cell reveal-on-scroll">
-      <div class="m-label"><span class="t" data-en="Services" data-zh="服務項目">Services</span></div>
-      <div class="pills">
-        <span class="t" data-en="Product Visuals" data-zh="產品視覺">Product Visuals</span>
-        <span class="t" data-en="E-commerce" data-zh="電商">E-commerce</span>
-        <span class="t" data-en="Campaign" data-zh="活動">Campaign</span>
-      </div>
-    </div>
-    <div class="m-cell reveal-on-scroll" data-reveal-delay="90ms">
+        <div class="m-cell reveal-on-scroll" data-reveal-delay="90ms">
       <div class="m-label"><span class="t" data-en="Challenge" data-zh="挑戰">Challenge</span></div>
-      <p class="l-en">Make technical protective accessories feel premium and desirable through clean, considered product imagery.</p>
-      <p class="l-zh">以乾淨、講究的產品視覺，讓技術性防護配件顯得高端且令人嚮往。</p>
+      <p class="l-en">Stand out in a highly competitive 3C accessories market. The approach stripped away excess decoration to create a sleek, premium, and memorable identity.</p>
+      <p class="l-zh">3C 配件市場競爭激烈。需剃除多餘視覺裝飾，透過克制且俐落的編排在紅海中脫穎而出，建立鮮明的品牌記憶點。</p>
     </div>
     <div class="m-cell reveal-on-scroll" data-reveal-delay="180ms">
       <div class="m-label"><span class="t" data-en="Role" data-zh="角色">Role</span></div>
-      <p class="l-en">Designer for product imagery, e-commerce, and campaign.</p>
-      <p class="l-zh">負責產品視覺、電商與活動的設計師。</p>
+      <p class="l-en">Brand Visual Design. Amplified the brand's core "minimalist & fashion-forward" tone, leading the visual guidelines and promotional marketing assets.</p>
+      <p class="l-zh">品牌視覺設計。精準萃取並放大品牌「時尚、簡約」的核心調性，統籌視覺規範定調與各式行銷宣傳素材設計。</p>
     </div>
   </div>
 
@@ -147,7 +146,7 @@
   </div>
 
   <div class="pagenav">
-    <a class="navbtn" href="../index.html#work">‹ <span class="t" data-en="Go back to projects" data-zh="回到所有作品">Go back to projects</span></a>
+    <a class="navbtn" href="../works.html">‹ <span class="t" data-en="Go back to projects" data-zh="回到所有作品">Go back to projects</span></a>
     <a class="navbtn" href="#top" onclick="scrollTo({top:0,behavior:'smooth'})"><span class="t" data-en="Scroll to top" data-zh="回到頂部">Scroll to top</span> ↑</a>
   </div>
 </div>

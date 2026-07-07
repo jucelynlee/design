@@ -93,8 +93,8 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 .prow1 h2 .l-zh{font-family:var(--tc);text-transform:none;letter-spacing:0}
 .ptags{display:flex;gap:12px;flex-wrap:wrap;padding-top:14px}
 .ptags span{background:#F5EEDE;color:#000000;border:none;border-radius:0;padding:8px 16px;font-weight:600;font-size:14px;white-space:nowrap}
-.prow2{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start}
-.pleft{position:sticky;top:20vh;display:flex;flex-direction:column;align-items:flex-start;gap:22px;padding-bottom:clamp(40px,8vh,80px)}
+.prow2{position:relative;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start}
+.pleft{position:sticky;top:20vh;align-self:start;height:fit-content;display:flex;flex-direction:column;align-items:flex-start;gap:22px;padding-bottom:clamp(40px,8vh,80px)}
 .pleft p{font-size:15.5px;line-height:1.7;color:var(--psoft);max-width:34ch}
 .pleft p.l-zh{font-family:var(--tc)}
 .pview{font-family:var(--m);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--pf);
@@ -126,7 +126,7 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
   .prow1{flex-direction:column;gap:16px;margin-bottom:3vh}
   .ptags{padding-top:0}
   .prow2{display:flex;flex-direction:column;gap:22px}
-  .pleft{position:relative;top:auto;padding-bottom:0;justify-content:flex-start;gap:14px}
+  .pleft{position:relative;top:auto;height:auto;align-self:auto;padding-bottom:0;justify-content:flex-start;gap:14px}
   .pimgs{order:-1;grid-template-columns:1fr;gap:12px}
   .pim img{height:auto;aspect-ratio:16/10}
   .pblock{gap:22px}
@@ -176,8 +176,8 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
   </div>
   <div class="prow2">
     <div class="pleft reveal-on-scroll">
-      <p class="l-en">Localizing a global crafting brand for the Taiwanese market. I developed targeted campaigns and e-commerce visuals that turn creative inspiration into measurable clicks and sales.</p>
-      <p class="l-zh">國際手作指標品牌的在地化推廣——精心策劃活動與電商視覺，成功將手作靈感轉化為實際的點擊與購買轉換。</p>
+      <p class="l-en">Localizing a global crafting brand for Taiwan through warm, approachable visuals for a successful crowdfunding campaign and O2O experience.</p>
+      <p class="l-zh">將全球手作科技品牌在地化，透過具溫度的視覺語彙，成功打造台灣首波群眾募資與線上線下整合體驗。</p>
       <a class="pview" href="projects/cricut.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
     </div>
     <div class="pimgs reveal-on-scroll" data-reveal-delay="100ms">
@@ -199,8 +199,8 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
   </div>
   <div class="prow2">
     <div class="pleft reveal-on-scroll">
-      <p class="l-en">Establishing a calm, design-led identity for a premium home appliance brand. Delivered comprehensive packaging, engaging key visuals, and an intuitive website interface.</p>
-      <p class="l-zh">高階家電品牌的視覺形塑——以沉穩、設計導向的識別核心，打造全方位的包裝、主視覺與品牌網頁。</p>
+      <p class="l-en">Breaking the cold tech stereotype with targeted, AI-assisted visuals that bring warmth and lifestyle appeal to a multi-line home appliance launch.</p>
+      <p class="l-zh">打破家電冰冷的科技迷思，針對三大分眾市場精準定調，結合 AI 協作打造具生活溫度的募資與數位視覺。</p>
       <a class="pview" href="projects/vephos.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
     </div>
     <div class="pimgs reveal-on-scroll" data-reveal-delay="100ms">
@@ -222,8 +222,8 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
   </div>
   <div class="prow2">
     <div class="pleft reveal-on-scroll">
-      <p class="l-en">Bridging cultures for a heritage Taiwanese food brand entering the US market. Designed impactful bilingual packaging and immersive exhibition booth graphics.</p>
-      <p class="l-zh">協助台灣傳統食品品牌進軍美國市場——量身打造具備文化橋樑作用的雙語包裝與展會空間視覺。</p>
+      <p class="l-en">Rebranding Taiwanese food for the US market through culturally tailored retail packaging and comprehensive international exhibition visuals.</p>
+      <p class="l-zh">協助台灣食品品牌進軍美國市場，全盤統籌符合在地文化語境的零售包裝重塑與大型國際展會視覺。</p>
       <a class="pview" href="projects/usexpo.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
     </div>
     <div class="pimgs reveal-on-scroll" data-reveal-delay="100ms">
@@ -245,8 +245,8 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
   </div>
   <div class="prow2">
     <div class="pleft reveal-on-scroll">
-      <p class="l-en">Crafted sleek product and campaign visuals for a premium device-protection brand, tailored specifically to captivate a design-conscious audience.</p>
-      <p class="l-zh">為頂級裝置防護配件品牌設計產品與活動視覺，精準鎖定並吸引重視設計質感的目標客群。</p>
+      <p class="l-en">Distilling a fashion-forward, minimalist identity to help a tech accessories brand stand out with premium appeal in a highly competitive market.</p>
+      <p class="l-zh">萃取「時尚與簡約」的核心調性，以克制俐落的視覺編排，為 3C 配件品牌在激烈紅海中建立高端記憶點。</p>
       <a class="pview" href="projects/decoded.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
     </div>
     <div class="pimgs reveal-on-scroll" data-reveal-delay="100ms">
@@ -268,8 +268,8 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
   </div>
   <div class="prow2">
     <div class="pleft reveal-on-scroll">
-      <p class="l-en">Revitalized the brand identity for a historic Taiwanese food house. Delivered a modernized logo, bilingual export packaging, retail packs, and premium gift sets.</p>
-      <p class="l-zh">台灣老字號品牌「宏裕行」的識別重塑——包含品牌標誌現代化、雙語外銷包裝、零售包裝以及精美禮盒設計。</p>
+      <p class="l-en">Elevating premium frozen foods through a minimalist, high-end packaging design that communicates freshness, quality, and brand value.</p>
+      <p class="l-zh">翻轉冷凍食品的既定印象，導入簡約留白的高級感排版，完美傳遞頂級食材的鮮度與高端定價價值。</p>
       <a class="pview" href="projects/hongyu.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
     </div>
     <div class="pimgs reveal-on-scroll" data-reveal-delay="100ms">

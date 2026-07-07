@@ -54,7 +54,9 @@
   .intro.l-zh{font-family:var(--sans-tc);line-height:1.65}
 
   /* METADATA GRID: services / challenge / role */
-  .meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:44px;border-top:1px solid var(--line);margin-top:48px;padding-top:46px}
+  .meta{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,64px);border-top:1px solid var(--line);margin-top:48px;padding-top:46px}
+  .m-cell>p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  @media(max-width:767px){.m-cell>p{display:block;-webkit-line-clamp:unset;overflow:visible}}
   .m-label{font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--violet-lt);margin-bottom:18px}
   .m-cell p{font-size:15.5px;line-height:1.75;color:rgba(245,238,222,.74)}
   .m-cell.l-zh p,.m-cell p.l-zh{font-family:var(--sans-tc)}
@@ -93,6 +95,11 @@
     .meta{grid-template-columns:1fr;gap:34px}
     .gallery{grid-template-columns:1fr}.g-full,.g-half{aspect-ratio:4/3}
   }
+  .top .rt .yr{color:var(--violet-lt)}
+  @media(min-width:768px){
+    .top{align-items:flex-end}
+    .top .rt{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:10px}
+  }
 </style>
 </head>
 <body>
@@ -101,7 +108,7 @@
 
 <header>
   <div class="wide bar">
-    <a class="crumb" href="../index.html#work">‹ <span class="t" data-en="Projects" data-zh="作品">Projects</span> / <b><span class="t" data-en="Hong Yu Food" data-zh="宏裕行">Hong Yu Food</span></b></a>
+    <a class="crumb" href="../works.html">‹ <span class="t" data-en="Projects" data-zh="作品">Projects</span> / <b><span class="t" data-en="Hong Yu Food" data-zh="宏裕行">Hong Yu Food</span></b></a>
     <div class="toggle"><button id="b-en" class="on" onclick="setLang('en')">EN</button><button id="b-zh" onclick="setLang('zh')">中</button></div>
   </div>
 </header>
@@ -120,23 +127,15 @@
   <p class="intro l-zh reveal-on-scroll">為台灣老字號食品品牌宏裕行，打造品牌識別與外銷雙語包裝。</p>
 
   <div class="meta">
-    <div class="m-cell reveal-on-scroll">
-      <div class="m-label"><span class="t" data-en="Services" data-zh="服務項目">Services</span></div>
-      <div class="pills">
-        <span class="t" data-en="Branding" data-zh="品牌識別">Branding</span>
-        <span class="t" data-en="Packaging" data-zh="包裝">Packaging</span>
-        <span class="t" data-en="Print" data-zh="印刷">Print</span>
-      </div>
-    </div>
-    <div class="m-cell reveal-on-scroll" data-reveal-delay="90ms">
+        <div class="m-cell reveal-on-scroll" data-reveal-delay="90ms">
       <div class="m-label"><span class="t" data-en="Challenge" data-zh="挑戰">Challenge</span></div>
-      <p class="l-en">Modernize a heritage food brand for export while keeping its trusted, familiar character.</p>
-      <p class="l-zh">在保留熟悉、可信賴特質的同時，讓老字號食品品牌煥新以利外銷。</p>
+      <p class="l-en">Flip the cheap stereotype of frozen foods. The visuals needed to highlight freshness and authenticity, aligning perfectly with its premium price point.</p>
+      <p class="l-zh">翻轉傳統冷凍食品的廉價印象。需透過視覺精準傳遞食材鮮度與真實感，完美對接產品的高端定位與定價價值。</p>
     </div>
     <div class="m-cell reveal-on-scroll" data-reveal-delay="180ms">
       <div class="m-label"><span class="t" data-en="Role" data-zh="角色">Role</span></div>
-      <p class="l-en">Designer for brand identity, packaging, and print.</p>
-      <p class="l-zh">負責品牌識別、包裝與印刷的設計師。</p>
+      <p class="l-en">Packaging & Visual Design. Introduced a minimalist, high-end editorial layout structure to elevate the retail packaging for premium frozen products.</p>
+      <p class="l-zh">包裝與視覺排版。導入簡約、留白的高級感排版結構，專責高單價冷凍食品的零售包裝設計與整體視覺質感升級。</p>
     </div>
   </div>
 
@@ -148,7 +147,7 @@
   </div>
 
   <div class="pagenav">
-    <a class="navbtn" href="../index.html#work">‹ <span class="t" data-en="Go back to projects" data-zh="回到所有作品">Go back to projects</span></a>
+    <a class="navbtn" href="../works.html">‹ <span class="t" data-en="Go back to projects" data-zh="回到所有作品">Go back to projects</span></a>
     <a class="navbtn" href="#top" onclick="scrollTo({top:0,behavior:'smooth'})"><span class="t" data-en="Scroll to top" data-zh="回到頂部">Scroll to top</span> ↑</a>
   </div>
 </div>

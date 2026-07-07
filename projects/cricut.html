@@ -54,7 +54,9 @@
   .intro.l-zh{font-family:var(--sans-tc);line-height:1.65}
 
   /* METADATA GRID: services / challenge / role */
-  .meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:44px;border-top:1px solid var(--line);margin-top:48px;padding-top:46px}
+  .meta{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,64px);border-top:1px solid var(--line);margin-top:48px;padding-top:46px}
+  .m-cell>p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  @media(max-width:767px){.m-cell>p{display:block;-webkit-line-clamp:unset;overflow:visible}}
   .m-label{font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--violet-lt);margin-bottom:18px}
   .m-cell p{font-size:15.5px;line-height:1.75;color:rgba(245,238,222,.74)}
   .m-cell.l-zh p,.m-cell p.l-zh{font-family:var(--sans-tc)}
@@ -93,6 +95,11 @@
     .meta{grid-template-columns:1fr;gap:34px}
     .gallery{grid-template-columns:1fr}.g-full,.g-half{aspect-ratio:4/3}
   }
+  .top .rt .yr{color:var(--violet-lt)}
+  @media(min-width:768px){
+    .top{align-items:flex-end}
+    .top .rt{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:10px}
+  }
 </style>
 </head>
 <body>
@@ -101,7 +108,7 @@
 
 <header>
   <div class="wide bar">
-    <a class="crumb" href="../index.html#work">‹ <span class="t" data-en="Projects" data-zh="作品">Projects</span> / <b>Cricut</b></a>
+    <a class="crumb" href="../works.html">‹ <span class="t" data-en="Projects" data-zh="作品">Projects</span> / <b>Cricut</b></a>
     <div class="toggle"><button id="b-en" class="on" onclick="setLang('en')">EN</button><button id="b-zh" onclick="setLang('zh')">中</button></div>
   </div>
 </header>
@@ -119,23 +126,15 @@
   <p class="intro l-zh reveal-on-scroll">Cricut 是國際手作與創客品牌。我的任務是讓它「在地化」——把活潑的 DIY 精神，轉化為台灣創作者真正會點擊、收藏並下單的社群與電商視覺。</p>
 
   <div class="meta">
-    <div class="m-cell reveal-on-scroll">
-      <div class="m-label"><span class="t" data-en="Services" data-zh="服務項目">Services</span></div>
-      <div class="pills">
-        <span class="t" data-en="Social Design" data-zh="社群設計">Social Design</span>
-        <span class="t" data-en="E-commerce" data-zh="電商">E-commerce</span>
-        <span class="t" data-en="Campaign" data-zh="活動企劃">Campaign</span>
-      </div>
-    </div>
-    <div class="m-cell reveal-on-scroll" data-reveal-delay="90ms">
+        <div class="m-cell reveal-on-scroll" data-reveal-delay="90ms">
       <div class="m-label"><span class="t" data-en="Challenge" data-zh="挑戰">Challenge</span></div>
-      <p class="l-en">Cricut's brand voice was built for a US audience. On Taiwan's platforms — LINE, Shopee, Instagram — it had to stay recognizably Cricut while fitting local reading habits, promo formats, and shopping behavior. Every visual had to stop the scroll, explain the product fast, and lead to a purchase.</p>
-      <p class="l-zh">Cricut 的品牌調性原本為美國受眾打造。在台灣的平台（LINE、蝦皮、Instagram）上，它必須保留 Cricut 的辨識度，同時貼合在地的閱讀習慣、促銷格式與購物行為。每一則視覺都要先讓人停下滑動、快速說清產品，並帶動購買。</p>
+      <p class="l-en">Introduce a new brand to Taiwan by softening its tech-heavy feel. I injected a relatable, "handmade" visual language to connect with local DIY audiences.</p>
+      <p class="l-zh">品牌初入台灣較為陌生。需在原廠規範下降低科技冷硬感，透過注入在地「手作感」的視覺語彙，有效拉近與受眾的距離。</p>
     </div>
     <div class="m-cell reveal-on-scroll" data-reveal-delay="180ms">
       <div class="m-label"><span class="t" data-en="Role" data-zh="角色">Role</span></div>
-      <p class="l-en">As the commercial designer on the account, I turned Cricut's key visuals into one localized system — social posts, campaign banners, and e-commerce graphics — keeping a consistent look across every touchpoint. [Personalize: name the campaign(s) you led and any result — e.g. lifting Shopee click-through during the 2024 year-end sale.]</p>
-      <p class="l-zh">作為此客戶的商業設計師，我把 Cricut 的主視覺，發展成一套在地化系統——社群貼文、活動 banner 與電商圖——讓每個接觸點維持一致的視覺。〔個人化補充：寫出你主導的活動與成效，例如在 2024 年末檔期提升蝦皮點擊率。〕</p>
+      <p class="l-en">Visual & Marketing Design. Led the FlyingV crowdfunding page, digital ads, and offline event assets (flyers, roll-up banners, and coupons).</p>
+      <p class="l-zh">視覺與行銷設計。統籌 FlyingV 募資頁面企劃、數位廣告素材，以及線下體驗會的 DM、易拉展與折價券設計。</p>
     </div>
   </div>
 
@@ -147,7 +146,7 @@
   </div>
 
   <div class="pagenav">
-    <a class="navbtn" href="../index.html#work">‹ <span class="t" data-en="Go back to projects" data-zh="回到所有作品">Go back to projects</span></a>
+    <a class="navbtn" href="../works.html">‹ <span class="t" data-en="Go back to projects" data-zh="回到所有作品">Go back to projects</span></a>
     <a class="navbtn" href="#top" onclick="scrollTo({top:0,behavior:'smooth'})"><span class="t" data-en="Scroll to top" data-zh="回到頂部">Scroll to top</span> ↑</a>
   </div>
 </div>

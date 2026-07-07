@@ -76,43 +76,37 @@ body.zh .zhf{font-family:var(--tc)}
   padding:calc(24px + 90px) var(--pad) clamp(40px,7vh,80px)}
 .whead h1{font-family:var(--d);font-weight:900;text-transform:uppercase;
   font-size:clamp(54px,10.5vw,170px);line-height:.88;letter-spacing:-.03em}
-.whead h1 span{display:block}
+.whead h1 .l-en span,.whead h1 .l-zh span{display:block}
 body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;line-height:1.04}
 .whead p{font-size:15px;line-height:1.75;color:rgba(245,238,222,.75);max-width:34ch;justify-self:end}
 .whead p.l-zh{font-family:var(--tc)}
 
 /* ===== project blocks ===== */
-.pblock{--pb:#161210;--pf:#F5EEDE;--psoft:rgba(245,238,222,.85);
+.pblock{--pb:#161210;--pf:#F5EEDE;--psoft:rgba(245,238,222,.8);
   background:var(--pb);color:var(--pf);
-  padding:clamp(40px,8vh,80px) var(--pad) 0;display:flex;flex-direction:column;gap:clamp(26px,4vh,44px)}
-.prow1{display:flex;justify-content:space-between;align-items:flex-start;gap:26px;flex-wrap:wrap}
+  padding:clamp(40px,8vh,80px) var(--pad) 0;display:flex;flex-direction:column;gap:0}
+.prow1{display:flex;justify-content:space-between;align-items:flex-start;gap:26px;flex-wrap:wrap;margin-bottom:4vh}
 .prow1 h2{font-family:var(--d);font-weight:900;text-transform:uppercase;
   font-size:clamp(44px,7.5vw,120px);line-height:.9;letter-spacing:-.025em}
 .prow1 h2 .l-zh{font-family:var(--tc);text-transform:none;letter-spacing:0}
 .ptags{display:flex;gap:12px;flex-wrap:wrap;padding-top:14px}
-.ptags span{background:#fff;color:#111;border-radius:6px;padding:11px 20px;font-weight:600;font-size:14px;white-space:nowrap}
-.pblock.lightband .ptags span{background:#161210;color:#F5EEDE}
-.prow2{display:grid;grid-template-columns:1fr 2fr;gap:clamp(24px,4vw,64px);align-items:end}
-.pleft{padding-bottom:clamp(40px,8vh,80px);display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.ptags span{background:#FFFFFF;color:#000000;border:none;border-radius:0;padding:8px 16px;font-weight:600;font-size:14px;white-space:nowrap}
+.prow2{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:stretch}
+.pleft{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:22px;padding-bottom:clamp(40px,8vh,80px)}
 .pleft p{font-size:15.5px;line-height:1.7;color:var(--psoft);max-width:34ch}
 .pleft p.l-zh{font-family:var(--tc)}
 .pview{font-family:var(--m);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--pf);
   text-decoration:underline;text-underline-offset:6px}
 .pview:hover{opacity:.75}
-.pimgs{display:grid;grid-template-columns:1fr 1.5fr;gap:16px;align-self:end}
+.pimgs{display:grid;grid-template-columns:1fr 1.5fr;gap:16px;align-self:stretch}
 .pim{position:relative;overflow:hidden;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.18);border-bottom:0;min-height:220px}
-.pblock.lightband .pim{border-color:rgba(0,0,0,.18)}
 .pim img{width:100%;height:clamp(240px,36vh,430px);object-fit:cover}
 .pim .hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;
   font-family:var(--m);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--psoft);opacity:.7}
 .pim img+.hint{display:none}
 
 /* brand colours */
-.b-cricut{--pb:#1EB487;--pf:#11150F;--psoft:rgba(17,21,15,.82)}
-.b-vephos{--pb:#002748}
-.b-usexpo{--pb:#F5EEDE;--pf:#1A1413;--psoft:rgba(26,20,19,.75)}
-.b-decoded{--pb:#5E4632}
-.b-hongyu{--pb:#4c76b6}
+.b-cricut,.b-vephos,.b-usexpo,.b-decoded,.b-hongyu{--pb:#161210;--pf:#F5EEDE;--psoft:rgba(245,238,222,.8)}
 
 .wfoot{padding:clamp(40px,7vh,70px) var(--pad);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   font-family:var(--m);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -127,11 +121,11 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
     padding:13px 30px;font-family:var(--m);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase}
   .whead{grid-template-columns:1fr;gap:22px;align-items:start;padding-top:100px}
   .whead p{justify-self:start}
-  .prow1{flex-direction:column;gap:16px}
+  .prow1{flex-direction:column;gap:16px;margin-bottom:3vh}
   .ptags{padding-top:0}
-  .prow2{grid-template-columns:1fr;gap:22px}
-  .pleft{padding-bottom:0}
-  .pimgs{grid-template-columns:1fr;gap:12px}
+  .prow2{display:flex;flex-direction:column;gap:22px}
+  .pleft{padding-bottom:0;justify-content:flex-start;gap:14px}
+  .pimgs{order:-1;grid-template-columns:1fr;gap:12px}
   .pim img{height:auto;aspect-ratio:16/10}
   .pblock{gap:22px}
 }
@@ -167,7 +161,7 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 </div>
 
 <!-- 01 CRICUT -->
-<section class="pblock b-cricut lightband">
+<section class="pblock b-cricut">
   <div class="prow1 reveal-on-scroll">
     <h2>Cricut</h2>
     <div class="ptags">
@@ -213,7 +207,7 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 </section>
 
 <!-- 03 US EXPO -->
-<section class="pblock b-usexpo lightband">
+<section class="pblock b-usexpo">
   <div class="prow1 reveal-on-scroll">
     <h2><span class="l-en">US Expo</span><span class="l-zh">美國展會</span></h2>
     <div class="ptags">

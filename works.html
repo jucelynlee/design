@@ -72,14 +72,16 @@ body.zh .zhf{font-family:var(--tc)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}.reveal-on-scroll{opacity:1!important;transform:none!important;transition:none!important}}
 
 /* ===== page header ===== */
-.whead{background:var(--bg);color:var(--fg);display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:end;
-  padding:calc(24px + 90px) var(--pad) clamp(40px,7vh,80px)}
+.whead{background:var(--bg);color:var(--fg);display:flex;flex-direction:column;align-items:flex-start;gap:clamp(16px,2vw,32px);
+  padding:calc(24px + 90px) var(--pad) 0}
 .whead h1{font-family:var(--d);font-weight:900;text-transform:uppercase;
   font-size:clamp(54px,10.5vw,170px);line-height:.88;letter-spacing:-.03em}
 .whead h1 .l-en span,.whead h1 .l-zh span{display:block}
 body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;line-height:1.04}
-.whead p{font-size:15px;line-height:1.75;color:rgba(245,238,222,.75);max-width:34ch;justify-self:end}
+.whead h1 .vio{color:var(--violet-lt)}
+.whead p{font-size:15px;line-height:1.75;color:rgba(245,238,222,.75);max-width:600px}
 .whead p.l-zh{font-family:var(--tc)}
+.wdiv{border:0;border-top:1px solid var(--line);margin:8vh var(--pad)}
 
 /* ===== project blocks ===== */
 .pblock{--pb:#161210;--pf:#F5EEDE;--psoft:rgba(245,238,222,.8);
@@ -91,8 +93,8 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 .prow1 h2 .l-zh{font-family:var(--tc);text-transform:none;letter-spacing:0}
 .ptags{display:flex;gap:12px;flex-wrap:wrap;padding-top:14px}
 .ptags span{background:#FFFFFF;color:#000000;border:none;border-radius:0;padding:8px 16px;font-weight:600;font-size:14px;white-space:nowrap}
-.prow2{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:stretch}
-.pleft{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:22px;padding-bottom:clamp(40px,8vh,80px)}
+.prow2{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start}
+.pleft{position:sticky;top:20vh;display:flex;flex-direction:column;align-items:flex-start;gap:22px;padding-bottom:clamp(40px,8vh,80px)}
 .pleft p{font-size:15.5px;line-height:1.7;color:var(--psoft);max-width:34ch}
 .pleft p.l-zh{font-family:var(--tc)}
 .pview{font-family:var(--m);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--pf);
@@ -124,7 +126,7 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
   .prow1{flex-direction:column;gap:16px;margin-bottom:3vh}
   .ptags{padding-top:0}
   .prow2{display:flex;flex-direction:column;gap:22px}
-  .pleft{padding-bottom:0;justify-content:flex-start;gap:14px}
+  .pleft{position:relative;top:auto;padding-bottom:0;justify-content:flex-start;gap:14px}
   .pimgs{order:-1;grid-template-columns:1fr;gap:12px}
   .pim img{height:auto;aspect-ratio:16/10}
   .pblock{gap:22px}
@@ -155,10 +157,12 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 </header>
 
 <div class="whead">
-  <h1 class="reveal-on-scroll"><span class="l-en"><span>Selected</span><span>Works</span></span><span class="l-zh zhf"><span>精選</span><span>作品</span></span></h1>
+  <h1 class="reveal-on-scroll"><span class="l-en"><span>Selected</span><span class="vio">Works</span></span><span class="l-zh zhf"><span>精選</span><span class="vio">作品</span></span></h1>
   <p class="l-en reveal-on-scroll" data-reveal-delay="120ms">A selection of projects that showcase my design approach, creative range, and the results I build for forward-thinking consumer brands.</p>
   <p class="l-zh reveal-on-scroll" data-reveal-delay="120ms">精選作品——展現我的設計思維、創意廣度，以及為前瞻消費品牌帶來的實際成果。</p>
 </div>
+
+<hr class="wdiv">
 
 <!-- 01 CRICUT -->
 <section class="pblock b-cricut">

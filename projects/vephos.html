@@ -55,8 +55,14 @@
 
   /* METADATA GRID: services / challenge / role */
   .meta{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,64px);border-top:1px solid var(--line);margin-top:48px;padding-top:46px}
-  .m-cell>p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  @media(max-width:767px){.m-cell>p{display:block;-webkit-line-clamp:unset;overflow:visible}}
+  .m-cell p.l-en{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  body.zh .m-cell p.l-en{display:none}
+  body.zh .m-cell p.l-zh{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  @media(max-width:767px){
+    .m-cell p.l-en{display:block;-webkit-line-clamp:unset;overflow:visible}
+    body.zh .m-cell p.l-en{display:none}
+    body.zh .m-cell p.l-zh{display:block;-webkit-line-clamp:unset;overflow:visible}
+  }
   .m-label{font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--violet-lt);margin-bottom:18px}
   .m-cell p{font-size:15.5px;line-height:1.75;color:rgba(245,238,222,.74)}
   .m-cell.l-zh p,.m-cell p.l-zh{font-family:var(--sans-tc)}

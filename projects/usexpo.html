@@ -50,11 +50,11 @@
   .top .rt .yr{color:var(--accent)}
 
   /* INTRO: large readable paragraph */
-  .intro{font-size:clamp(22px,3vw,34px);line-height:1.5;font-weight:500;color:var(--fg);padding:46px 0;max-width:30ch}
+  .intro{font-size:clamp(22px,3vw,34px);line-height:1.5;font-weight:500;color:var(--fg);padding:46px 0;max-width:900px}
   .intro.l-zh{font-family:var(--sans-tc);line-height:1.65}
 
   /* METADATA GRID: services / challenge / role */
-  .meta{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,64px);border-top:1px solid var(--line);margin-top:0;padding-top:46px}
+  .meta{display:grid;grid-template-columns:1fr 1fr;gap:clamp(4rem,6vw,6rem);width:100%;border-top:1px solid var(--line);margin-top:0;padding-top:46px}
   .m-cell p.l-en{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   body.zh .m-cell p.l-en{display:none}
   body.zh .m-cell p.l-zh{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -106,6 +106,29 @@
     .top{align-items:flex-end}
     .top .rt{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:10px}
   }
+  /* next projects */
+  .next-projects{margin-top:100px}
+  .next-projects h2{font-family:var(--d);font-weight:900;text-transform:uppercase;text-align:center;
+    font-size:clamp(48px,9vw,140px);line-height:.92;letter-spacing:-.03em;color:var(--fg);
+    margin-bottom:clamp(30px,6vh,60px)}
+  body.zh .next-projects h2{font-family:var(--sans-tc);text-transform:none;letter-spacing:0}
+  .next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;width:100%}
+  .ncard{display:block}
+  .ncard .nimg{aspect-ratio:4/3;overflow:hidden;background:#1d1714;position:relative}
+  .ncard .nimg img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .6s cubic-bezier(.25,1,.5,1)}
+  .ncard:hover .nimg img{transform:scale(1.05)}
+  .nmeta{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:1rem;
+    font-family:var(--m);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg)}
+  .nmeta .ncta{color:var(--violet-lt);white-space:nowrap}
+  span.l-zh{display:none}
+  body.zh span.l-en{display:none}
+  body.zh span.l-zh{display:inline}
+  @media(max-width:767px){
+    .next-projects{margin-top:70px}
+    .next-projects h2{font-size:clamp(40px,13vw,64px)}
+    .next-grid{grid-template-columns:1fr;gap:2rem}
+  }
 </style>
 </head>
 <body>
@@ -151,6 +174,24 @@
     <div class="ph g-half reveal-on-scroll"><img src="../images/usexpo-3.jpg" alt="US Expo" loading="lazy" onerror="this.remove()"><span class="hint">../images/usexpo-3.jpg  ←  add more</span></div>
     <div class="ph g-full reveal-on-scroll" data-reveal-delay="90ms"><img src="../images/usexpo-4.jpg" alt="US Expo" loading="lazy" onerror="this.remove()"><span class="hint">../images/usexpo-4.jpg  ←  add more</span></div>
   </div>
+
+<section class="next-projects">
+  <h2 class="reveal-on-scroll"><span class="l-en">Next<br>Project</span><span class="l-zh">更多<br>作品</span></h2>
+  <div class="next-grid reveal-on-scroll">
+    <a class="ncard" href="decoded.html">
+      <div class="nimg"><img src="../images/decoded-1.jpg" alt="DECODED" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="nmeta"><span>04</span><span>DECODED</span><span class="ncta"><span class="t" data-en="Full Project ↗" data-zh="完整專案 ↗">Full Project ↗</span></span></div>
+    </a>
+    <a class="ncard" href="hongyu.html">
+      <div class="nimg"><img src="../images/hongyu-1.jpg" alt="Hong Yu Food" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="nmeta"><span>05</span><span><span class="l-en">Hong Yu Food</span><span class="l-zh">宏裕行</span></span><span class="ncta"><span class="t" data-en="Full Project ↗" data-zh="完整專案 ↗">Full Project ↗</span></span></div>
+    </a>
+    <a class="ncard" href="cricut.html">
+      <div class="nimg"><img src="../images/cricut-1.jpg" alt="Cricut" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="nmeta"><span>01</span><span>Cricut</span><span class="ncta"><span class="t" data-en="Full Project ↗" data-zh="完整專案 ↗">Full Project ↗</span></span></div>
+    </a>
+  </div>
+</section>
 
   <div class="pagenav">
     <a class="navbtn" href="../works.html">‹ <span class="t" data-en="Go back to projects" data-zh="回到所有作品">Go back to projects</span></a>

@@ -145,6 +145,15 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
   .pim img{height:auto;aspect-ratio:16/10}
   .pblock{gap:22px}
 }
+
+/* ===== Kaisei-style sticky card-deck (desktop) ===== */
+.pstack{position:relative}
+@media(min-width:768px){
+  .pstack .pblock{position:sticky;top:0;min-height:100vh;min-height:100dvh;
+    box-shadow:0 -40px 80px rgba(0,0,0,.45);will-change:transform,filter;transform-origin:center top}
+  .pstack .prow2{flex:1;align-items:end}
+  .pstack .pleft{position:static;align-self:end;height:auto}
+}
 </style>
 </head>
 <body>
@@ -178,6 +187,7 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 
 <hr class="wdiv">
 
+<div class="pstack">
 <!-- 01 CRICUT -->
 <section class="pblock b-cricut">
   <div class="prow1 reveal-on-scroll">
@@ -292,6 +302,7 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
     </div>
   </div>
 </section>
+</div>
 
 <div class="wfoot">
   <a href="index.html"><span class="t" data-en="← Back to home" data-zh="← 回到首頁">← Back to home</span></a>
@@ -320,6 +331,27 @@ function mToggle(){ document.getElementById('mov').classList.toggle('open'); }
   });},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
   items.forEach(el=>io.observe(el));
 })();
+
+/* ---------- card-deck scroll physics ---------- */
+(function(){
+  if(matchMedia('(max-width:767px)').matches || reduce) return;
+  const blocks=[...document.querySelectorAll('.pstack .pblock')];
+  if(blocks.length<2) return;
+  function upd(){
+    const vh=innerHeight;
+    for(let i=0;i<blocks.length;i++){
+      const nxt=blocks[i+1], b=blocks[i];
+      if(!nxt){ b.style.transform=''; b.style.filter=''; continue; }
+      const t=Math.min(Math.max(nxt.getBoundingClientRect().top/vh,0),1); /* 1 = next far below, 0 = fully covering */
+      const p=1-t;
+      b.style.transform='scale('+(1-p*0.06).toFixed(4)+')';
+      b.style.filter='brightness('+(1-p*0.35).toFixed(3)+')';
+    }
+    requestAnimationFrame(upd);
+  }
+  requestAnimationFrame(upd);
+})();
+
 if(matchMedia('(pointer:fine)').matches && !reduce){
   const dot=document.getElementById('dot'),ring=document.getElementById('ring');
   let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;

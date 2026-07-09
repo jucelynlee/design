@@ -102,15 +102,15 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
   background:var(--pb);color:var(--pf);
   padding:clamp(40px,8vh,80px) var(--pad) 0;display:flex;flex-direction:column;gap:0}
 .prow1{display:flex;justify-content:space-between;align-items:flex-start;gap:26px;flex-wrap:wrap;margin-bottom:4vh}
-.prow1 h2{font-family:var(--d);font-weight:900;text-transform:uppercase;
-  font-size:clamp(44px,7.5vw,120px);line-height:.9;letter-spacing:-.025em}
-.prow1 h2 .l-zh{font-family:var(--tc);text-transform:none;letter-spacing:0}
-.ptags{display:flex;gap:12px;flex-wrap:wrap;padding-top:14px}
+.sticky-text-wrapper h2{font-family:var(--d);font-weight:900;text-transform:uppercase;
+  font-size:clamp(36px,4.2vw,68px);line-height:.95;letter-spacing:-.02em}
+.sticky-text-wrapper h2 .l-zh{font-family:var(--tc);text-transform:none;letter-spacing:0}
+.ptags{display:flex;gap:12px;flex-wrap:wrap;padding-top:2px;margin-bottom:6px}
 .ptags span{background:#F5EEDE;color:#000000;border:none;border-radius:0;padding:8px 16px;font-weight:600;font-size:14px;white-space:nowrap}
-.prow2{position:relative;display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:flex-start;padding-bottom:15vh}
-.pleft{position:-webkit-sticky;position:sticky;top:15vh;height:max-content;align-self:flex-start;z-index:10;display:flex;flex-direction:column;align-items:flex-start;gap:22px}
-.pleft p{font-size:15.5px;line-height:1.7;color:var(--psoft);max-width:34ch}
-.pleft p.l-zh{font-family:var(--tc)}
+.prow2{position:relative;display:grid;grid-template-columns:1fr 1.7fr;gap:clamp(32px,4vw,56px);align-items:flex-start;padding-bottom:10vh}
+.sticky-text-wrapper{position:-webkit-sticky;position:sticky;top:5vh;align-self:flex-start;height:fit-content;z-index:10;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.sticky-text-wrapper p{font-size:15.5px;line-height:1.7;color:var(--psoft);max-width:38ch}
+.sticky-text-wrapper p.l-zh{font-family:var(--tc)}
 .pview{font-family:var(--m);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--pf);
   text-decoration:underline;text-underline-offset:6px}
 .pview:hover{opacity:.75}
@@ -140,7 +140,7 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
   .prow1{flex-direction:column;gap:16px;margin-bottom:3vh}
   .ptags{padding-top:0}
   .prow2{display:flex;flex-direction:column;gap:22px;padding-bottom:0}
-  .pleft{position:relative;top:auto;height:auto;align-self:auto;padding-bottom:0;justify-content:flex-start;gap:14px}
+  .sticky-text-wrapper{position:relative;top:auto;height:auto;align-self:auto;gap:14px}
   .pimgs{order:-1;grid-template-columns:1fr;gap:12px;align-self:auto}
   .pim img{height:auto;aspect-ratio:16/10}
   .pblock{gap:22px}
@@ -181,16 +181,14 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 
 <!-- 01 CRICUT -->
 <section class="pblock b-cricut">
-  <div class="prow1 reveal-on-scroll">
-    <h2>Cricut</h2>
-    <div class="ptags">
+  <div class="prow2">
+    <div class="sticky-text-wrapper reveal-on-scroll">
+      <h2>Cricut</h2>
+      <div class="ptags">
       <span class="t" data-en="Social" data-zh="社群">Social</span>
       <span class="t" data-en="E-commerce" data-zh="電商">E-commerce</span>
       <span class="t" data-en="Campaign" data-zh="活動">Campaign</span>
     </div>
-  </div>
-  <div class="prow2">
-    <div class="pleft reveal-on-scroll">
       <p class="l-en">Localizing a global crafting brand for Taiwan through warm, approachable visuals for a successful crowdfunding campaign and O2O experience.</p>
       <p class="l-zh">將全球手作科技品牌在地化，透過具溫度的視覺語彙，成功打造台灣首波群眾募資與線上線下整合體驗。</p>
       <a class="pview" href="projects/cricut.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
@@ -204,16 +202,14 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 
 <!-- 02 VEPHOS -->
 <section class="pblock b-vephos">
-  <div class="prow1 reveal-on-scroll">
-    <h2>Vephos</h2>
-    <div class="ptags">
+  <div class="prow2">
+    <div class="sticky-text-wrapper reveal-on-scroll">
+      <h2>Vephos</h2>
+      <div class="ptags">
       <span class="t" data-en="Branding" data-zh="品牌">Branding</span>
       <span class="t" data-en="Packaging" data-zh="包裝">Packaging</span>
       <span class="t" data-en="Website" data-zh="網頁">Website</span>
     </div>
-  </div>
-  <div class="prow2">
-    <div class="pleft reveal-on-scroll">
       <p class="l-en">Breaking the cold tech stereotype with targeted, AI-assisted visuals that bring warmth and lifestyle appeal to a multi-line home appliance launch.</p>
       <p class="l-zh">打破家電冰冷的科技迷思，針對三大分眾市場精準定調，結合 AI 協作打造具生活溫度的募資與數位視覺。</p>
       <a class="pview" href="projects/vephos.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
@@ -227,16 +223,14 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 
 <!-- 03 US EXPO -->
 <section class="pblock b-usexpo">
-  <div class="prow1 reveal-on-scroll">
-    <h2><span class="l-en">US Expo</span><span class="l-zh">美國展會</span></h2>
-    <div class="ptags">
+  <div class="prow2">
+    <div class="sticky-text-wrapper reveal-on-scroll">
+      <h2><span class="l-en">US Expo</span><span class="l-zh">美國展會</span></h2>
+      <div class="ptags">
       <span class="t" data-en="Packaging" data-zh="包裝">Packaging</span>
       <span class="t" data-en="Print" data-zh="印刷">Print</span>
       <span class="t" data-en="Exhibition" data-zh="展會">Exhibition</span>
     </div>
-  </div>
-  <div class="prow2">
-    <div class="pleft reveal-on-scroll">
       <p class="l-en">Rebranding Taiwanese food for the US market through culturally tailored retail packaging and comprehensive international exhibition visuals.</p>
       <p class="l-zh">協助台灣食品品牌進軍美國市場，全盤統籌符合在地文化語境的零售包裝重塑與大型國際展會視覺。</p>
       <a class="pview" href="projects/usexpo.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
@@ -250,16 +244,14 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 
 <!-- 04 DECODED -->
 <section class="pblock b-decoded">
-  <div class="prow1 reveal-on-scroll">
-    <h2>DECODED</h2>
-    <div class="ptags">
+  <div class="prow2">
+    <div class="sticky-text-wrapper reveal-on-scroll">
+      <h2>DECODED</h2>
+      <div class="ptags">
       <span class="t" data-en="Product" data-zh="產品">Product</span>
       <span class="t" data-en="E-commerce" data-zh="電商">E-commerce</span>
       <span class="t" data-en="Campaign" data-zh="活動">Campaign</span>
     </div>
-  </div>
-  <div class="prow2">
-    <div class="pleft reveal-on-scroll">
       <p class="l-en">Distilling a fashion-forward, minimalist identity to help a tech accessories brand stand out with premium appeal in a highly competitive market.</p>
       <p class="l-zh">萃取「時尚與簡約」的核心調性，以克制俐落的視覺編排，為 3C 配件品牌在激烈紅海中建立高端記憶點。</p>
       <a class="pview" href="projects/decoded.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
@@ -273,16 +265,14 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 
 <!-- 05 HONG YU -->
 <section class="pblock b-hongyu">
-  <div class="prow1 reveal-on-scroll">
-    <h2><span class="l-en">Hong Yu Food</span><span class="l-zh">宏裕行</span></h2>
-    <div class="ptags">
+  <div class="prow2">
+    <div class="sticky-text-wrapper reveal-on-scroll">
+      <h2><span class="l-en">Hong Yu Food</span><span class="l-zh">宏裕行</span></h2>
+      <div class="ptags">
       <span class="t" data-en="Branding" data-zh="品牌">Branding</span>
       <span class="t" data-en="Packaging" data-zh="包裝">Packaging</span>
       <span class="t" data-en="Print" data-zh="印刷">Print</span>
     </div>
-  </div>
-  <div class="prow2">
-    <div class="pleft reveal-on-scroll">
       <p class="l-en">Elevating premium frozen foods through a minimalist, high-end packaging design that communicates freshness, quality, and brand value.</p>
       <p class="l-zh">翻轉冷凍食品的既定印象，導入簡約留白的高級感排版，完美傳遞頂級食材的鮮度與高端定價價值。</p>
       <a class="pview" href="projects/hongyu.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>

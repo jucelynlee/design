@@ -100,7 +100,8 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 /* ===== project blocks ===== */
 .pblock{--pb:#161210;--pf:#F5EEDE;--psoft:rgba(245,238,222,.8);
   background:var(--pb);color:var(--pf);
-  padding:clamp(40px,8vh,80px) var(--pad) 0;display:flex;flex-direction:column;gap:0}
+  padding:clamp(40px,8vh,80px) var(--pad) 0;display:flex;flex-direction:column;gap:0;margin-bottom:25vh}
+.pblock:last-of-type{margin-bottom:5vh}
 .prow1{display:flex;justify-content:space-between;align-items:flex-start;gap:26px;flex-wrap:wrap;margin-bottom:4vh}
 .sticky-text-wrapper h2{font-family:var(--d);font-weight:900;text-transform:uppercase;
   font-size:clamp(36px,4.2vw,68px);line-height:.95;letter-spacing:-.02em}
@@ -143,7 +144,8 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
   .sticky-text-wrapper{position:relative;top:auto;height:auto;align-self:auto;gap:14px}
   .pimgs{order:-1;grid-template-columns:1fr;gap:12px;align-self:auto}
   .pim img{height:auto;aspect-ratio:16/10}
-  .pblock{gap:22px}
+  .pblock{gap:22px;margin-bottom:12vh}
+  .pblock:last-of-type{margin-bottom:4vh}
 }
 
 </style>

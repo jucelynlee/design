@@ -115,9 +115,11 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
 .pview{font-family:var(--m);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--pf);
   text-decoration:underline;text-underline-offset:6px}
 .pview:hover{opacity:.75}
-.pimgs{display:grid;grid-template-columns:1fr;gap:24px;align-self:start;height:auto!important;min-height:0!important}
-.pim{position:relative;overflow:hidden;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.18);border-bottom:0;min-height:220px}
-.pim img{width:100%;height:clamp(240px,38vh,420px);object-fit:cover}
+.pimgs{display:grid;grid-template-columns:4fr 7fr;gap:2.5rem;align-items:center;align-self:start;width:100%;height:auto!important;min-height:0!important}
+.pim{position:relative;overflow:hidden;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.18);min-height:0}
+.pim.narrow{aspect-ratio:3/4}
+.pim.wide{aspect-ratio:4/3}
+.pim img{width:100%;height:100%;object-fit:cover;display:block}
 .pim .hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;
   font-family:var(--m);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--psoft);opacity:.7}
 .pim img+.hint{display:none}
@@ -142,9 +144,9 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
   .ptags{padding-top:0}
   .prow2{display:flex;flex-direction:column;gap:2rem;padding-bottom:0}
   .sticky-text-wrapper{position:relative!important;top:auto!important;height:auto!important;align-self:auto;gap:14px}
-  .pimgs{order:-1;grid-template-columns:1fr;gap:1rem;align-self:auto;width:100%}
-  .pim{min-height:250px!important}
-  .pim img{width:100%;height:auto!important;min-height:250px!important;aspect-ratio:16/9}
+  .pimgs{order:-1;grid-template-columns:1fr;gap:1.5rem;align-self:auto;width:100%}
+  .pim.narrow,.pim.wide{aspect-ratio:16/9}
+  .pim img{width:100%;height:100%!important;object-fit:cover}
   .pblock{gap:22px;margin-bottom:4rem!important}
   .pblock:last-of-type{margin-bottom:4rem!important}
 }
@@ -196,9 +198,9 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
       <p class="l-zh">將全球手作科技品牌在地化，透過具溫度的視覺語彙，成功打造台灣首波群眾募資與線上線下整合體驗。</p>
       <a class="pview" href="projects/cricut.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
     </div>
-    <div class="pimgs reveal-on-scroll" data-reveal-delay="100ms">
-      <div class="pim"><img src="images/cricut-1.jpg" alt="Cricut key visual" loading="lazy" onerror="this.remove()"><span class="hint">cricut-1.jpg</span></div>
-      <div class="pim"><img src="images/cricut-2.jpg" alt="Cricut social set" loading="lazy" onerror="this.remove()"><span class="hint">cricut-2.jpg</span></div>
+    <div class="pimgs asymmetric-grid reveal-on-scroll" data-reveal-delay="100ms">
+      <div class="pim narrow"><img src="images/cricut-1.jpg" alt="Cricut key visual" loading="lazy" onerror="this.remove()"><span class="hint">cricut-1.jpg</span></div>
+      <div class="pim wide"><img src="images/cricut-2.jpg" alt="Cricut social set" loading="lazy" onerror="this.remove()"><span class="hint">cricut-2.jpg</span></div>
     </div>
   </div>
 </section>
@@ -217,9 +219,9 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
       <p class="l-zh">打破家電冰冷的科技迷思，針對三大分眾市場精準定調，結合 AI 協作打造具生活溫度的募資與數位視覺。</p>
       <a class="pview" href="projects/vephos.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
     </div>
-    <div class="pimgs reveal-on-scroll" data-reveal-delay="100ms">
-      <div class="pim"><img src="images/vephos-1.jpg" alt="Vephos packaging" loading="lazy" onerror="this.remove()"><span class="hint">vephos-1.jpg</span></div>
-      <div class="pim"><img src="images/vephos-2.jpg" alt="Vephos key visual" loading="lazy" onerror="this.remove()"><span class="hint">vephos-2.jpg</span></div>
+    <div class="pimgs asymmetric-grid reveal-on-scroll" data-reveal-delay="100ms">
+      <div class="pim narrow"><img src="images/vephos-1.jpg" alt="Vephos packaging" loading="lazy" onerror="this.remove()"><span class="hint">vephos-1.jpg</span></div>
+      <div class="pim wide"><img src="images/vephos-2.jpg" alt="Vephos key visual" loading="lazy" onerror="this.remove()"><span class="hint">vephos-2.jpg</span></div>
     </div>
   </div>
 </section>
@@ -238,9 +240,9 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
       <p class="l-zh">協助台灣食品品牌進軍美國市場，全盤統籌符合在地文化語境的零售包裝重塑與大型國際展會視覺。</p>
       <a class="pview" href="projects/usexpo.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
     </div>
-    <div class="pimgs reveal-on-scroll" data-reveal-delay="100ms">
-      <div class="pim"><img src="images/usexpo-1.jpg" alt="US Expo web banner" loading="lazy" onerror="this.remove()"><span class="hint">usexpo-1.jpg</span></div>
-      <div class="pim"><img src="images/usexpo-2.jpg" alt="US Expo booth" loading="lazy" onerror="this.remove()"><span class="hint">usexpo-2.jpg</span></div>
+    <div class="pimgs asymmetric-grid reveal-on-scroll" data-reveal-delay="100ms">
+      <div class="pim narrow"><img src="images/usexpo-1.jpg" alt="US Expo web banner" loading="lazy" onerror="this.remove()"><span class="hint">usexpo-1.jpg</span></div>
+      <div class="pim wide"><img src="images/usexpo-2.jpg" alt="US Expo booth" loading="lazy" onerror="this.remove()"><span class="hint">usexpo-2.jpg</span></div>
     </div>
   </div>
 </section>
@@ -259,9 +261,9 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
       <p class="l-zh">萃取「時尚與簡約」的核心調性，以克制俐落的視覺編排，為 3C 配件品牌在激烈紅海中建立高端記憶點。</p>
       <a class="pview" href="projects/decoded.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
     </div>
-    <div class="pimgs reveal-on-scroll" data-reveal-delay="100ms">
-      <div class="pim"><img src="images/decoded-1.jpg" alt="DECODED product" loading="lazy" onerror="this.remove()"><span class="hint">decoded-1.jpg</span></div>
-      <div class="pim"><img src="images/decoded-2.jpg" alt="DECODED lifestyle" loading="lazy" onerror="this.remove()"><span class="hint">decoded-2.jpg</span></div>
+    <div class="pimgs asymmetric-grid reveal-on-scroll" data-reveal-delay="100ms">
+      <div class="pim narrow"><img src="images/decoded-1.jpg" alt="DECODED product" loading="lazy" onerror="this.remove()"><span class="hint">decoded-1.jpg</span></div>
+      <div class="pim wide"><img src="images/decoded-2.jpg" alt="DECODED lifestyle" loading="lazy" onerror="this.remove()"><span class="hint">decoded-2.jpg</span></div>
     </div>
   </div>
 </section>
@@ -280,9 +282,9 @@ body.zh .whead h1{font-family:var(--tc);text-transform:none;letter-spacing:0;lin
       <p class="l-zh">翻轉冷凍食品的既定印象，導入簡約留白的高級感排版，完美傳遞頂級食材的鮮度與高端定價價值。</p>
       <a class="pview" href="projects/hongyu.html"><span class="t" data-en="View Project →" data-zh="查看專案 →">View Project →</span></a>
     </div>
-    <div class="pimgs reveal-on-scroll" data-reveal-delay="100ms">
-      <div class="pim"><img src="images/hongyu-1.jpg" alt="Hong Yu packaging" loading="lazy" onerror="this.remove()"><span class="hint">hongyu-1.jpg</span></div>
-      <div class="pim"><img src="images/hongyu-2.jpg" alt="Hong Yu gift set" loading="lazy" onerror="this.remove()"><span class="hint">hongyu-2.jpg</span></div>
+    <div class="pimgs asymmetric-grid reveal-on-scroll" data-reveal-delay="100ms">
+      <div class="pim narrow"><img src="images/hongyu-1.jpg" alt="Hong Yu packaging" loading="lazy" onerror="this.remove()"><span class="hint">hongyu-1.jpg</span></div>
+      <div class="pim wide"><img src="images/hongyu-2.jpg" alt="Hong Yu gift set" loading="lazy" onerror="this.remove()"><span class="hint">hongyu-2.jpg</span></div>
     </div>
   </div>
 </section>

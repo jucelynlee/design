@@ -190,7 +190,7 @@ body.zh .s-head h2{font-family:var(--tc);text-transform:none;letter-spacing:0}
 .cap-list{align-self:center}
 .cap-row{display:grid;grid-template-columns:80px 1fr minmax(300px,520px);gap:clamp(14px,3vw,44px);
   align-items:start;padding:8vh 0;border-bottom:1px solid var(--line);
-  transition:background .35s ease,padding-left .35s ease}
+  transition:opacity var(--reveal-duration) var(--reveal-easing),transform var(--reveal-duration) var(--reveal-easing),background .35s ease,padding-left .35s ease}
 @media(pointer:fine){
   .cap-row:hover{background:rgba(245,238,222,.045);padding-left:22px}
   .cap-row:hover .cap-name{color:var(--violet-lt)}
